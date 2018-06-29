@@ -1,3 +1,2 @@
-# PetCemetery
-This project needs to be 87% memes, and 14% actual work.
-inb4 r/woooosh
+# Team PetCemetery
+Scrum Project 01, Summer 2018
