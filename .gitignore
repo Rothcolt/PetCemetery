@@ -1,0 +1,6 @@
+*.pro.user
+*.o
+moc_*
+paint
+ui_*
+.qmake*
