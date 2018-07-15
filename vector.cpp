@@ -20,14 +20,24 @@ explicit Vector<Type>::Vector(int s) {
 }
 
     //! Copy constructor.
-    Vector<Type>::Vector(const vector&) {
+    Vector<Type>::Vector(const vector& source)
+        : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
+
+        size_v = source.size_v;
+
         return;
     }
 
-    //! Move constructor.
-    Vector<Type>::Vector(vector&&) {
-        return;
-    }
+//! Move constructor.
+Vector<Type>::Vector(vector&& source)
+: size_v { source.size_v }, elem { source.elem }, space { source.space } {
+
+    source.size_v = 0;
+    source.elem = NULL;
+    source.space = 0;
+
+    return;
+}
 
     //! Copy assignment operator.
     Vector<Type>::Vector& operator=() {
@@ -73,15 +83,28 @@ void Vector<Type>::resize(int newsize)  {
     return;
 }
 
-    //! Mutator: Add an element to the vector.
-    void Vector<Type>::push_back(double d) {
+//! Mutator: Add an element to the vector.
+void Vector<Type>::push_back(Type new_elem) {
+
+    // ERROR: No more room in vector.
+    if (space == 0) {
         return;
     }
 
-    //! Mutator: Allocate more space to vector.
-    void Vector<Type>::reserve(int newalloc) {
-        return;
-    }
+    // Add new element to the array.
+    elem[size] = new_elem;
+    size_v++;
+    space--;
+
+    return;
+}
+
+//! Mutator: Allocate more space to vector.
+void Vector<Type>::reserve(int newalloc) {
+    space = space + newalloc;
+
+    return;
+}
 
     //! Templated iterator.
     using Vector<Type>::iterator = Type*;
@@ -118,5 +141,3 @@ void Vector<Type>::resize(int newsize)  {
     Vector<Type>::iterator erase(iterator p) {
         return;
     }
-
-}
