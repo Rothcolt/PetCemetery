@@ -6,7 +6,8 @@ HEADERS += \
     polygon.h \
     rectangle.h \
     ellipse.h \
-    text.h
+    text.h \
+    shapeparser.h
 
 SOURCES += \
     line.cpp \
@@ -15,4 +16,5 @@ SOURCES += \
     polygon.cpp \
     rectangle.cpp \
     ellipse.cpp \
-    text.cpp
+    text.cpp \
+    shapeparser.cpp
