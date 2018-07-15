@@ -3,11 +3,12 @@
 
 #include "shape.h"
 
-class Ellipse
+class Ellipse: public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
     Ellipse();
+    Ellipse(int xI, int yI, int aI, int bI);
     // **** DESTRUCTOR ***************** //
     virtual ~Ellipse();
     // **** VIRTUAL ***************** //
@@ -18,9 +19,10 @@ public:
     // **** ACCESSOR ***************** //
     // **** MUTATOR ***************** //
 private:
-    QRect rectangle;    // CLASS OBJECT      : Holds rectangle object
-    int x;              // Position Variable : Holds x-coordinate for text box
-    int y;              // Position Variable : Holds y-coordinate for text box
+    int x1; // Position Variable : Holds x-coordinate for text box
+    int y1; // Position Variable : Holds y-coordinate for text box
+    int a;  // Semi major axis
+    int b;  // Semi minor axis
 };
 
 #endif // ELLIPSE_H

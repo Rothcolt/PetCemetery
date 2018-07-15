@@ -2,40 +2,41 @@
 
 Rectangle::Rectangle()
 {
-    rectangle.setRect(0, 0, 50, 50);
-    ptr = this;
+    x1 = 0;
+    y1 = 0;
+    length = 0;
+    width  = 0;
 }
 
-Rectangle::Rectangle(int x1, int y1, int w1, int h1)
+Rectangle::Rectangle(int xI, int yI, int w, int l)
 {
-    // Invokes Shape custom constructor
-    Shape::shape(w1, h1);
-    // Assigns shape ptr to Rectangle object
-    ptr = this;
-    // Sets the first xy-coordinates, the width, and height of the rectangle
-   rectangle.setRect(x1, y1, ptr->width, ptr->height);
+   x1 = xI;
+   y1 = yI;
+   length = l;
+   width  = w;
+   setArea();
+   setPerim();
 }
 
-void Rectangle::drawShape()
+void Rectangle::drawShape(QPainter* painter)
 {
-    // Uses pointer to access and invoke QPainter object drawPolygone function
-    ptr->artist.drawRect(x1, y1, ptr->width, ptr->height);
+    painter->drawRect(x1, y1, width, length);
 }
 
-void Rectangle::moveShape()
+void Rectangle::moveShape(int x1, int y1)
 {
-    // Resets polygon coordinates
-    rectangle.moveTo(x1, y1);
+    this->x1 = x1;
+    this->y1 = y1;
 }
 
-void Rectangle::calcPerimShape()
+float Rectangle::calcPerimShape()
 {
     // Returns the result of (2 * width) + (2 * height)
-    return (2 * static_cast<float>(ptr->width)) + (2 * static_cast<float>(ptr->height));
+   return (2 * static_cast<float>(width)) + (2 * static_cast<float>(length));
 }
 
-void Rectangle::calcAreaShape()
+float Rectangle::calcAreaShape()
 {
     // Returns the result of the width * height
-    return static_cast<float>(ptr->width) * static_cast<float>(ptr->height)
+   return (static_cast<float>(width) * static_cast<float>(length));
 }

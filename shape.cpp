@@ -2,12 +2,26 @@
 
 Shape::Shape()
 {
-    width = 0;
-    height = 0;
+    area = 0;
+    perimeter = 0;
 }
 
-Shape::Shape(int w1, int h1)
+void Shape::setArea()
 {
-    width = 0;
-    height = 0;
+    area = calcAreaShape();
+}
+
+void Shape::setPerim()
+{
+    perimeter = calcPerimShape();
+}
+
+float Shape::getArea()
+{
+    return area;
+}
+
+float Shape::getPerim()
+{
+    return perimeter;
 }

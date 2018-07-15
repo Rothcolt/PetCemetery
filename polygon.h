@@ -3,18 +3,19 @@
 
 #include "shape.h"
 
-class Polygon
+class Polygon: public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
     Polygon();
+    Polygon(int index, int x1, int y1, int x2, int y2, int x3, int y3);
     // **** DESTRUCTOR ***************** //
     virtual ~Polygon();
     // **** VIRTUAL ***************** //
     virtual void drawShape();
     virtual void moveShape();
-    virtual void calcPerimShape();
-    virtual void calcAreaShape();
+    virtual float calcPerimShape();
+    virtual float calcAreaShape();
     // **** ACCESSOR ***************** //
     // **** MUTATOR ***************** //
 private:
