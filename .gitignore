@@ -4,3 +4,4 @@ moc_*
 paint
 ui_*
 .qmake*
+.DS_Store
