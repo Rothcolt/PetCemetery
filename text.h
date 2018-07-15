@@ -3,7 +3,7 @@
 
 #include "shape.h"
 
-class text : public shape
+class text : public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
@@ -11,14 +11,14 @@ public:
     // **** DESTRUCTOR ***************** //
     virtual ~text();
     // **** VIRTUAL ***************** //
-    virtual drawShape();
-    virtual moveShape();
-    virtual calcPerimShape();
-    virtual calcAreaShape();
+//    virtual drawShape();
+//    virtual moveShape();
+//    virtual calcPerimShape();
+//    virtual calcAreaShape();
     // **** ACCESSOR ***************** //
     // **** MUTATOR ***************** //
 private:
-    Qstring stringText; // CLASS OBJECT      : Holds string for text
+//    Qstring stringText; // CLASS OBJECT      : Holds string for text
     int x;              // Position Variable : Holds x-coordinate for text box
     int y;              // Position Variable : Holds y-coordinate for text box
     // Need textFontFamily, textFontStyle, and textFontWeight

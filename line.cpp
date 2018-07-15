@@ -3,35 +3,35 @@
 Line::Line()
 {
     line.setLine(0, 0, 50, 50);
-    xI = 0;
-    yI = 0;
-    xII = 50;
-    yII = 50;
+    x1 = 0;
+    y1 = 0;
+    x2 = 50;
+    y2 = 50;
 
-    ptr = this;
+//    ptr = this;
 }
 
-Line::Line(int x1, int y1, int x2, int y2)
+Line::Line(int xI, int yI, int xII, int yII)
 {
-    line.setLine(x1, y1, x2, y2);
-    xI = x1;
-    yI = y1;
-    xII = x2;
-    yII = y2;
+    line.setLine(xI, yI, xII, yII);
+    x1 = xI;
+    y1 = yI;
+    x2 = xII;
+    y2 = yII;
 
-    ptr = this;
+//    ptr = this;
 }
 
 void Line::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawLine function
-    ptr->artist.drawLine(line);
+//    ptr->artist.drawLine(line);
 }
 
-void Line::moveShape(int x1, int y1, int x2, int y2)
+void Line::moveShape(int xI, int yI, int xII, int yII)
 {
     // Uses line method to reset position
-    line.setLine(x1, y1, x2, y2);
+    line.setLine(xI, yI, xII, yII);
 }
 
 float Line::calcPerimShape()

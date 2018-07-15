@@ -1,3 +1,8 @@
+QT += core gui widgets
+
+TARGET = PetCemetery
+TEMPLATE = app
+
 HEADERS += \
     Inclusion_Tools.h \
     shape.h \

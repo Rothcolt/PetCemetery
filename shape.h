@@ -3,29 +3,32 @@
 
 #include "Inclusion_Tools.h"
 
-class shape
+class Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
-    shape();
-    Shape(int w1, int h1);
-    shape(const Shape &copyObject); // Copy constructor
+    Shape();
+    Shape(const Shape &copyObject); // Copy constructor
 
     // **** DESTRUCTOR ***************** //
-    virtual ~shape();
+    virtual ~Shape();
 
     // **** VIRTUAL ***************** //
-    virtual void drawShape() = 0;
+    virtual void drawShape(QPainter* painter) = 0;
     virtual void moveShape() = 0;
-    virtual int calcPerimShape() = 0;
+    virtual float calcPerimShape() = 0;
     virtual float calcAreaShape() = 0;
+    void setArea();
+    void setPerim();
+    float getArea();
+    float getPerim();
 
 private:
-    QPainter artist;        // CLASS OBJECT   : Draws shapes
-    int width;             // DIM   VARIABLE : Holds shape base measurement
-    int height;           // DIM   VARIABLE : Holds shape height measurement
-    QPen pen;               // CLASS OBJECT   : Holds pen class
-    QBrush brush;           // BRUSH VARIABLE : Holds brush class
+    float area;
+    float perimeter;
+    QPainter artist; // CLASS OBJECT   : Draws shapes
+    QPen pen;        // CLASS OBJECT   : Holds pen class
+    QBrush brush;    // BRUSH VARIABLE : Holds brush class
 };
 
 #endif // SHAPE_H

@@ -6,6 +6,12 @@
 #include <fstream>
 #include <qfile.h>
 #include <QTextStream>
+#include "ellipse.h"
+#include "line.h"
+#include "polygon.h"
+#include "polyline.h"
+#include "rectangle.h"
+#include "text.h"
 using namespace std;
 
 class ShapeParser
@@ -16,7 +22,7 @@ public:
     void ReadInShape();
 
 private:
-    QVector shapeList;
+//    QVector shapeList;
 };
 
 #endif // SHAPEPARSER_H
