@@ -1,10 +1,13 @@
 #include "vector.h"
 
 
-/*! Default constructor.
+/** @brief Graph::edgeWeight
+ * This method will return the weight between the given indices.
  *
- * No parameters used.
- */
+ * @param v1 vertex index 1
+ * @param v2 vertex index 2
+ *
+ * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
 template<class Type>
 Vector<Type>::Vector() {
 
@@ -17,10 +20,13 @@ Vector<Type>::Vector() {
 }
 
 
-/*! Parameterized constructor.
+
+/** @brief Graph::edgeWeight
+ * This method will return the weight between the given indices.
  *
- * int s: Size of the new vector.
- */
+ * @param s / Size of the new vector.
+ *
+ * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
 template<class Type>
 Vector<Type>::Vector(int s) {
 
@@ -136,10 +142,12 @@ Vector<Type>::~Vector() {
 }
 
 
-/*! Accessor: Return reference.
+/** @brief Vector<type>::operator
+ * This method will return a reference to an indexed array element.
  *
- * int n: Index of the element being returned.
- */
+ * @param n / Index of the array element to be returned..
+ *
+ * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
 template<class Type>
 Type& Vector<Type>::operator[](int n) {
 
@@ -206,7 +214,7 @@ void Vector<Type>::push_back(Type new_elem) {
     }
 
     // Add new element to the array.
-    elem[size] = new_elem;
+    elem[size_v] = new_elem;
     size_v++;
     space--;
 
@@ -228,25 +236,24 @@ void Vector<Type>::reserve(int newalloc) {
 }
 
 
-//! Templated iterator.
+//! Aliased iterator.
 /* template<class Type>
 using Vector<Type>::iterator = Type*; */
 
 
-//! Constant iterator.
+//! Aliased iterator.
 /* template<class Type>
 using Vector<Type>::const_iterator = const Type*; */
 
 
-    //! Points to first element.
+//! Points to first element.
 /* template<class Type>
 Vector<Type>::iterator begin() {
-
     return;
 } */
 
 
-    //! Points to first element.
+//! Points to first element.
 /* template<class Type>
 Vector<Type>::const_iterator begin() const {
     return;

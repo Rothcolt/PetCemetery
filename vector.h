@@ -10,6 +10,16 @@ const int DFL_SIZE = 20;
 template<class Type>
 class Vector {
 
+/***************************************************************************************************/
+
+private:
+
+    int size_v;                                 /*! Vector size.         */
+    Type* elem;                                 /*! Element pointer.     */
+    int space;                                  /*! Size + free space.   */
+
+/***************************************************************************************************/
+
 public:
 
     /*! Vector class for storing shape objects.
@@ -33,24 +43,41 @@ public:
     void push_back(Type new_elem);              /*! Mutator: Add an element to the vector.  */
     void reserve(int newalloc);                 /*! Mutator: Allocate more space to vector. */
 
-//  using iterator = Type*;                     /*! Templated iterator. */
-//  using const_iterator = const Type*;         /*! Constant iterator.  */
+/***************************************************************************************************/
 
-//  iterator begin();                           /*! Points to first element. */
-//  const_iterator begin() const;               /*! Points to first element. */
+// These functions were unable to be defined outside the header file.
 
-//  iterator end();                             /*! Points to one element beyond last. */
-//  const_iterator end() const;                 /*! Points to one element beyond last. */
+    // Iterator alisases.
+    using v_iterator = Type*;                                /*! Aliased iterator.       */
+    using const_iterator = const Type*;                      /*! Aliased const iterator. */
 
-//  iterator insert(iterator p, const Type& v); /*! Insert new element v before p.  */
-//  iterator erase(iterator p);                 /*! Remove element pointed to by p. */
+    // Return first value in vector.
+    v_iterator begin() { return &elem[0]; }                  /*! Points to first element. */
+    const_iterator begin() const { return &elem[0]; }        /*! Points to first element. */
 
+    // Return one value beyond the end.
+    v_iterator end() { return &elem[size_v + 1]; }           /*! Points to one element beyond last. */
+    const_iterator end() const { return &elem[size_v + 1]; } /*! Points to one element beyond last. */
 
-private:
+    /*! Insert new element v before p.  */
+    v_iterator insert(v_iterator p, const Type& v) {
 
-    int size_v;                                 /*! Vector size.         */
-    Type* elem;                                 /*! Element pointer.     */
-    int space;                                  /*! Size + free space.   */
+        // Add new element to the array.
+        p - 1 = v;
+
+        return;
+    }
+
+    /*! Remove element pointed to by p. */
+    v_iterator erase(v_iterator p) {
+
+        // Release memory at p.
+        delete p;
+
+        return;
+    }
+
+/***************************************************************************************************/
 
 };
 
