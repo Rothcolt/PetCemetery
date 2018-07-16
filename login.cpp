@@ -1,6 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
-
+#include <QMessageBox>
 login::login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::login)
@@ -32,4 +32,4 @@ void login::on_pushButton_login_clicked()
        }
 
    }
-}
+
