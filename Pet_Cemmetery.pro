@@ -13,7 +13,8 @@ HEADERS += \
     ellipse.h \
     text.h \
     shapeparser.h \
-    vector.h
+    vector.h \
+    login.h
 
 SOURCES += \
     line.cpp \
@@ -25,4 +26,8 @@ SOURCES += \
     text.cpp \
     shapeparser.cpp \
     main.cpp \
-    vector.cpp
+    vector.cpp \
+    login.cpp
+
+FORMS += \
+    login.ui
