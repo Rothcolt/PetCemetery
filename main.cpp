@@ -7,8 +7,11 @@
 #include "shapeparser.h"
 #include "text.h"
 
-int main()
-{
+/*! Main function file for the Qt painter project.
+ * Calls upon all files to execute primary functinality */
+
+//! Primary functionality.
+int main() {
 
     return 0;
 }

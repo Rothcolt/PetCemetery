@@ -1,6 +1,8 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//! All C++ and Qt libraries to be used.
+
 #include <QPainter>
 #include <QPoint>
 #include <QLine>
