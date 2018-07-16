@@ -3,24 +3,28 @@
 
 #include "shape.h"
 
-class Rectangle: public Shape
-{
+/*! Derived from abstract base class Shape. */
+class Rectangle: public Shape {
 public:
-    // **** CONSTRUCTORS ***************** //
-    Rectangle();
-    Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l);
-    // **** DESTRUCTOR ***************** //
-    virtual ~Rectangle();
-    // **** VIRTUAL ***************** //
-    virtual void drawShape(QPainter* painter);
-    virtual void moveShape();
-    virtual float calcPerimShape();
-    virtual float calcAreaShape();
+
+    /*! Rectangle object, with position, length, and width variables.
+     * Able to be drawn and moved. */
+
+    Rectangle();                                    /*! Default constructor.      */
+    Rectangle(QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
+              int x1, int y1, int w, int l);        /*! with all variables.       */
+    virtual ~Rectangle();                           /*! Default destructor.       */
+
+    virtual void drawShape(QPainter* painter);      /*! Draw the shape in the paint module. */
+    virtual void moveShape();                       /*! Change coordinates and move shape.  */
+    virtual float calcPerimShape();                 /*! Return perimeter (not required).    */
+    virtual float calcAreaShape();                  /*! Return area (not required).         */
+
 private:
-    int x1;     // Position Variable : Holds x-coordinate for text box
-    int y1;     // Position Variable : Holds y-coordinate for text box
-    int length;
-    int width;
+    int x1;         /*! Position Variable : Holds x-coordinate for text box. */
+    int y1;         /*! Position Variable : Holds y-coordinate for text box. */
+    int length;     /*! Size Variable: Hold length of the rectangle.         */
+    int width;      /*! Size Variable: Hold width of the rectangle.          */
 };
 
 #endif // RECTANGLE_H

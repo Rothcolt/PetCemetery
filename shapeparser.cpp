@@ -1,12 +1,12 @@
 #include "shapeparser.h"
 
-ShapeParser::ShapeParser()
-{
+//! Default constructor.
+ShapeParser::ShapeParser() {
 
 }
 
-void ShapeParser::ReadInShape()
-{
+//! Read in shapes from a file.
+void ShapeParser::ReadInShape() {
     int shapeId;
     int penWidth;
     int textPointSize;

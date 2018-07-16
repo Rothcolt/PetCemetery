@@ -20,30 +20,30 @@ public:
 
     Vector(const Vector&);                      /*! Copy constructor.          */
     Vector(Vector&&);                           /*! Move constructor.          */
-    Vector& operator=(const Vector& rhs);                        /*! Copy assignment operator.  */
-    Vector& operator=(Vector&& rhs);                        /*! Move assignment operator.  */
+    Vector& operator=(const Vector& rhs);       /*! Copy assignment operator.  */
+    Vector& operator=(Vector&& rhs);            /*! Move assignment operator.  */
     ~Vector();                                  /*! Default denstructor.       */
 
-    Type& operator[] (int n);                   /*! Accessor: Return reference.     */
-    const Type& operator[] (int n);             /*! Accessor: Return reference.     */
+    Type& operator[](int n);                    /*! Accessor: Return reference.     */
+    const Type& operator[](int n) const;        /*! Accessor: Return reference.     */
     int size() const;                           /*! Accessor: Return current size.  */
     int capacity() const;                       /*! Accessor: Return current space. */
 
     void resize(int newsize);                   /*! Mutator: Change the size of the vector. */
-    void push_back(double d);                   /*! Mutator: Add an element to the vector.  */
+    void push_back(Type new_elem);              /*! Mutator: Add an element to the vector.  */
     void reserve(int newalloc);                 /*! Mutator: Allocate more space to vector. */
 
-    using iterator = Type*;                     /*! Templated iterator. */
-    using const_iterator = const Type*;         /*! Constant iterator.  */
+//  using iterator = Type*;                     /*! Templated iterator. */
+//  using const_iterator = const Type*;         /*! Constant iterator.  */
 
-    iterator begin();                           /*! Points to first element. */
-    const_iterator begin() const;               /*! Points to first element. */
+//  iterator begin();                           /*! Points to first element. */
+//  const_iterator begin() const;               /*! Points to first element. */
 
-    iterator end();                             /*! Points to one element beyond last. */
-    const_iterator end() const;                 /*! Points to one element beyond last. */
+//  iterator end();                             /*! Points to one element beyond last. */
+//  const_iterator end() const;                 /*! Points to one element beyond last. */
 
-    iterator insert(iterator p, const Type& v); /*! Insert new element v before p.  */
-    iterator erase(iterator p);                 /*! Remove element pointed to by p. */
+//  iterator insert(iterator p, const Type& v); /*! Insert new element v before p.  */
+//  iterator erase(iterator p);                 /*! Remove element pointed to by p. */
 
 
 private:

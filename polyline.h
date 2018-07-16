@@ -3,26 +3,32 @@
 
 #include "shape.h"
 
-class Polyline: public Shape
-{
+/*! Derived from abstract base class Shape. */
+class Polyline: public Shape {
 public:
-    // **** CONSTRUCTORS ***************** //
-    Polyline();
-    Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3);
-    // **** DESTRUCTOR ***************** //
-    virtual ~Polyline();
-    // **** VIRTUAL ***************** //
-    virtual void drawShape(QPainter* painter);
-    virtual void moveShape();
-//    virtual float calcPerimShape();
-//    virtual float calcAreaShape();
+
+    /*! Polyline object, with point variables.
+     * Able to be drawn and moved. */
+
+    Polyline();                                             /*! Default constructor.      */
+    Polyline(QPen pen, QBrush brush, int id, int x1,        /*! Paramterized constructor  */
+             int y1, int x2, int y2, int x3, int y3);       /*! with all variables.       */
+    virtual ~Polyline();                                    /*! Default destructor.       */
+
+    virtual void drawShape(QPainter* painter);              /*! Draw the shape in the paint module. */
+    virtual void moveShape();                               /*! Change coordinates and move shape.  */
+/*  virtual float calcPerimShape(); */                      /*! Return perimeter (not required).    */
+/*  virtual float calcAreaShape();  */                      /*! Return area (not required).         */
+
 private:
-    int x1;
-    int x2;
-    int x3;
-    int y1;
-    int y2;
-    int y3;
+
+    int x1;     /*! Position Variable : Holds first x-coordinate for polyline corner.  */
+    int x2;     /*! Position Variable : Holds first y-coordinate for polyline corner.  */
+    int x3;     /*! Position Variable : Holds second x-coordinate for polyline corner. */
+    int y1;     /*! Position Variable : Holds second y-coordinate for polyline corner. */
+    int y2;     /*! Position Variable : Holds third x-coordinate for polyline corner.  */
+    int y3;     /*! Position Variable : Holds third y-coordinate for polyline corner.  */
+
 };
 
 #endif // POLYLINE_H
