@@ -60,10 +60,11 @@ Vector<Type>::Vector(const Vector<Type>& source)
 }
 
 
-/*! Move constructor.
+
+/** @brief Vector<Type>::Vector
+ * Copy constructor for the vector class object.
  *
- * Vector&& source: The vector object being copied.
- */
+ * @param source Vector object to be copied. */
 template<class Type>
 Vector<Type>::Vector(Vector<Type>&& source)
     : size_v { source.size_v }, elem { source.elem }, space { source.space } {
@@ -77,10 +78,11 @@ Vector<Type>::Vector(Vector<Type>&& source)
 }
 
 
-/*! Copy assignment operator.
+/** @brief Vector<Type>::operator=
+ * Copy assignment operator for the vector class object.
  *
- * Vector& rhs: The vector to the right of the operator.
- */
+ * @param rhs Vector object to the right of the operator.
+ * @return *this A pointer to the newly-modified object. */
 template<class Type>
 Vector<Type>& Vector<Type>::operator=(const Vector& rhs) {
 
@@ -222,9 +224,8 @@ void Vector<Type>::push_back(Type new_elem) {
 }
 
 
-/*! Mutator: Allocate more space to vector.
+/**
  *
- * int newalloc: Space to be "appended" to vector.
  */
 template<class Type>
 void Vector<Type>::reserve(int newalloc) {
