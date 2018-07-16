@@ -11,7 +11,7 @@ public:
      * Able to be drawn and moved. */
 
     Ellipse();                                  /*! Default constructor.      */
-    Ellipse(QPen pen, QBrush brush, int id,     /*! Paramterized constructor. */
+    Ellipse(QPen pen, QBrush brush, int id,     /*! Paramterized constructor  */
             int x1, int y1, int a, int b);      /*! with all variables.       */
     virtual ~Ellipse();                         /*! Default destructor.       */
 
