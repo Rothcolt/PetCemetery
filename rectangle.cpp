@@ -1,16 +1,20 @@
 #include "rectangle.h"
 
-Rectangle::Rectangle()
-    :Shape()
-{
+//! Default constructor.
+Rectangle::Rectangle() : Shape() {
+
     this->x1 = 0;
     this->y1 = 0;
     length = 0;
     width  = 0;
+
+    return;
 }
 
-Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
-{
+
+//! Paramterized constructor with all variables.
+Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l) {
+
    this->x1 = x1;
    this->y1 = y1;
    length = l;
@@ -18,31 +22,45 @@ Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int 
    this->id = id;
    this->pen = QPen(pen);
    this->brush = QBrush(brush);
+
+   return;
 }
 
-Rectangle::~Rectangle()
-{
 
+//! Default destructor.
+Rectangle::~Rectangle() {
+
+    return;
 }
 
-void Rectangle::drawShape(QPainter* painter)
-{
+
+//! Draw the shape in the paint module.
+void Rectangle::drawShape(QPainter* painter) {
+
     painter->drawRect(x1, y1, width, length);
+
+    return;
 }
 
-void Rectangle::moveShape()
-{
 
+//! Change coordinates and move shape.
+void Rectangle::moveShape() {
+
+    return;
 }
 
-float Rectangle::calcPerimShape()
-{
+
+//! Return perimeter (not required).
+float Rectangle::calcPerimShape() {
+
     // Returns the result of (2 * width) + (2 * height)
-   return (2 * static_cast<float>(width)) + (2 * static_cast<float>(length));
+    return (2 * static_cast<float>(width)) + (2 * static_cast<float>(length));
 }
 
-float Rectangle::calcAreaShape()
-{
+
+//! Return area (not required).
+float Rectangle::calcAreaShape() {
+
     // Returns the result of the width * height
-   return (static_cast<float>(width) * static_cast<float>(length));
+    return (static_cast<float>(width) * static_cast<float>(length));
 }

@@ -13,7 +13,9 @@ HEADERS += \
     ellipse.h \
     text.h \
     shapeparser.h \
-    vector.h
+    vector.h \
+    square.h \
+    circle.h
 
 SOURCES += \
     line.cpp \
@@ -25,4 +27,6 @@ SOURCES += \
     text.cpp \
     shapeparser.cpp \
     main.cpp \
-    vector.cpp
+    vector.cpp \
+    square.cpp \
+    circle.cpp

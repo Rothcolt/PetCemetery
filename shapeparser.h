@@ -14,14 +14,21 @@
 #include "text.h"
 using namespace std;
 
-class ShapeParser
-{
+
+//! Parsing class with all library inclusions.
+class ShapeParser {
 public:
-    ShapeParser();
-    ~ShapeParser();
-    void ReadInShape();
+
+    //! Parser for reading in shapes.
+
+    ShapeParser();              /*! Default constructor.        */
+    ~ShapeParser();             /*! Default destructor.         */
+    void ReadInShape();         /*! Read in shapes from a file. */
+
 private:
+
 //    QVector shapeList;
+
 };
 
 #endif // SHAPEPARSER_H

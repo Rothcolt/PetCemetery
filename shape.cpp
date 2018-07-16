@@ -1,7 +1,8 @@
 #include "shape.h"
 
-Shape::Shape()
-{
+//! Default constructor.
+Shape::Shape() {
+
     this->id = 0;
     this->pen.setStyle(Qt::PenStyle::SolidLine);
     this->pen.setColor(Qt::GlobalColor::black);
@@ -11,10 +12,14 @@ Shape::Shape()
 
     this->brush.setColor(brush.color());
     this->brush.setStyle(brush.style());
+
+    return;
 }
 
-Shape::Shape(QPen pen, QBrush brush, int id)
-{
+
+//! Paramterized constructor.
+Shape::Shape(QPen pen, QBrush brush, int id) {
+
     this->id = id;
     this->pen.setStyle(pen.style());
     this->pen.setColor(pen.color());
@@ -24,49 +29,68 @@ Shape::Shape(QPen pen, QBrush brush, int id)
 
     this->brush.setColor(brush.color());
     this->brush.setStyle(brush.style());
+
+    return;
 }
 
-Shape::~Shape()
-{
+//! Default destructor.
+Shape::~Shape() {
 
+    return;
 }
 
-//void Shape::setArea()
-//{
-//    area = calcAreaShape();
-//}
 
-//void Shape::setPerim()
-//{
-//    perimeter = calcPerimShape();
-//}
+//! Setter for the area.
+/* void Shape::setArea() {
 
-//float Shape::getArea()
-//{
-//    return area;
-//}
+    area = calcAreaShape();
+} */
 
-//float Shape::getPerim()
-//{
-//    return perimeter;
-//}
 
-//Qt::PenStyle Shape::getPenStyle()
-//{
-//    return penStyle;
-//}
+//! Setter for the perimeter.
+/* void Shape::setPerim() {
 
-QPen Shape::getPen()
-{
+    perimeter = calcPerimShape();
+} */
+
+
+//! Getter for the area.
+/* float Shape::getArea() {
+
+    return area;
+} */
+
+
+//! Getter for the perimeter.
+/* float Shape::getPerim() {
+
+    return perimeter;
+} */
+
+
+//! Getter for the pen style.
+/* Qt::PenStyle Shape::getPenStyle() {
+
+    return penStyle;
+} */
+
+
+//! Getter for the QPen object.
+QPen Shape::getPen() {
+
     return pen;
 }
 
-QBrush Shape::getBrush()
-{
+
+//! Getter for the QBrush object.
+QBrush Shape::getBrush() {
+
     return brush;
 }
 
-int Shape::getId()
-{
+
+//! Getter for the ID variable.
+int Shape::getId() {
+
     return id;
 }
