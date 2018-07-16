@@ -3,25 +3,35 @@
 
 #include "shape.h"
 
-class text : public Shape
+class Text : public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
-    text();
+    Text();
+    Text(QString text, QString fontFamily, int pointSize, Qt::GlobalColor color,
+         Qt::AlignmentFlag align, QFont::Style fontStyle, QFont::Weight fontWeight);
     // **** DESTRUCTOR ***************** //
-    virtual ~text();
+    virtual ~Text();
     // **** VIRTUAL ***************** //
 //    virtual drawShape();
 //    virtual moveShape();
 //    virtual calcPerimShape();
 //    virtual calcAreaShape();
-    // **** ACCESSOR ***************** //
-    // **** MUTATOR ***************** //
-private:
-//    Qstring stringText; // CLASS OBJECT      : Holds string for text
-    int x;              // Position Variable : Holds x-coordinate for text box
-    int y;              // Position Variable : Holds y-coordinate for text box
-    // Need textFontFamily, textFontStyle, and textFontWeight
+    void setText(QString text);
+    void setFontFamily(QString fontFamily);
+    void setPointSize(int pointSize);
+    void setColor(Qt::GlobalColor color);
+    void setAlignment(Qt::AlignmentFlag align);
+    void setFontStyle(QFont::Style fontStyle);
+    void setFontWeight(QFont::Weight weight);
+protected:
+    QString stringText; // CLASS OBJECT      : Holds string for text
+    QString textFontFamily;
+    int textPointSize;
+    Qt::GlobalColor textColor;
+    Qt::AlignmentFlag textAlignment;
+    QFont::Style textFontStyle;
+    QFont::Weight textFontWeight;
 };
 
 #endif // TEXT_H

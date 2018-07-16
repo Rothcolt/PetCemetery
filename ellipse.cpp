@@ -1,6 +1,7 @@
 #include "ellipse.h"
 
 Ellipse::Ellipse()
+    :Shape()
 {
     x1 = 0;
     y1 = 0;
@@ -8,18 +9,25 @@ Ellipse::Ellipse()
     b = 0;
 }
 
-Ellipse::Ellipse(int xI, int yI, int aI, int bI)
+Ellipse::Ellipse(QPen pen, QBrush brush, int id, int x1, int y1, int a, int b)
 {
-    x1 = xI;
-    y1 = yI;
-    a = aI;
-    b = bI;
+    this->x1 = x1;
+    this->y1 = y1;
+    this->a = a;
+    this->b = b;
+    this->pen = QPen(pen);
+    this->brush = QBrush(brush);
+    this->id = id;
 }
 
-void Ellipse::drawShape()
+Ellipse::~Ellipse()
 {
-    // Uses pointer to access and invoke QPainter object drawRect function
-//    ptr->artist.drawEllipse(rectangle);
+
+}
+
+void Ellipse::drawShape(QPainter* painter)
+{
+    painter->drawEllipse(x1, y1, a, b);
 }
 
 void Ellipse::moveShape()
@@ -28,21 +36,21 @@ void Ellipse::moveShape()
 //    rectangle.moveTo(x1, y1);
 }
 
-void Ellipse::calcPerimShape()
-{
-//    float a = (static_cast<float>(ptr->width) / 2);
-//    float b = (static_cast<float>(ptr->height) / 2);
-    float pi = 3.14159265;
+//float Ellipse::calcPerimShape()
+//{
+////    float a = (static_cast<float>(ptr->width) / 2);
+////    float b = (static_cast<float>(ptr->height) / 2);
+//    float pi = 3.14159265;
 
-    // Returns the result of the ellipse perimeter approximation by the Indian Mathematician Ramanujan
+//    // Returns the result of the ellipse perimeter approximation by the Indian Mathematician Ramanujan
 //    return pi * (3 * (a + b) - sqrt((3 * a + b) * (a + 3 * b)));
-}
+//}
 
-void Ellipse::calcAreaShape()
-{
-//    float a = (static_cast<float>(ptr->width) / 2);
-//    float b = (static_cast<float>(ptr->height) / 2);
-    float pi = 3.14159265;
-    // Returns the result of the ellipse area formula
+//float Ellipse::calcAreaShape()
+//{
+////    float a = (static_cast<float>(ptr->width) / 2);
+////    float b = (static_cast<float>(ptr->height) / 2);
+//    float pi = 3.14159265;
+//    // Returns the result of the ellipse area formula
 //    return a * b * pi;
-}
+//}

@@ -2,26 +2,71 @@
 
 Shape::Shape()
 {
-    area = 0;
-    perimeter = 0;
+    this->id = 0;
+    this->pen.setStyle(Qt::PenStyle::SolidLine);
+    this->pen.setColor(Qt::GlobalColor::black);
+    this->pen.setWidth(10);
+    this->pen.setCapStyle(pen.capStyle());
+    this->pen.setJoinStyle(pen.joinStyle());
+
+    this->brush.setColor(brush.color());
+    this->brush.setStyle(brush.style());
 }
 
-void Shape::setArea()
+Shape::Shape(QPen pen, QBrush brush, int id)
 {
-    area = calcAreaShape();
+    this->id = id;
+    this->pen.setStyle(pen.style());
+    this->pen.setColor(pen.color());
+    this->pen.setWidth(pen.width());
+    this->pen.setCapStyle(pen.capStyle());
+    this->pen.setJoinStyle(pen.joinStyle());
+
+    this->brush.setColor(brush.color());
+    this->brush.setStyle(brush.style());
 }
 
-void Shape::setPerim()
+Shape::~Shape()
 {
-    perimeter = calcPerimShape();
+
 }
 
-float Shape::getArea()
+//void Shape::setArea()
+//{
+//    area = calcAreaShape();
+//}
+
+//void Shape::setPerim()
+//{
+//    perimeter = calcPerimShape();
+//}
+
+//float Shape::getArea()
+//{
+//    return area;
+//}
+
+//float Shape::getPerim()
+//{
+//    return perimeter;
+//}
+
+//Qt::PenStyle Shape::getPenStyle()
+//{
+//    return penStyle;
+//}
+
+QPen Shape::getPen()
 {
-    return area;
+    return pen;
 }
 
-float Shape::getPerim()
+QBrush Shape::getBrush()
 {
-    return perimeter;
+    return brush;
+}
+
+int Shape::getId()
+{
+    return id;
 }

@@ -22,4 +22,5 @@ SOURCES += \
     rectangle.cpp \
     ellipse.cpp \
     text.cpp \
-    shapeparser.cpp
+    shapeparser.cpp \
+    main.cpp

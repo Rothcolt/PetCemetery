@@ -20,7 +20,6 @@ public:
     ShapeParser();
     ~ShapeParser();
     void ReadInShape();
-
 private:
 //    QVector shapeList;
 };

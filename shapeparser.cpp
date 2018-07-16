@@ -27,6 +27,7 @@ void ShapeParser::ReadInShape()
     Qt::AlignmentFlag textAllignment;
     QFont::Style  textFontStyle;
     QFont::Weight textFontWeight;
+    Shape *newShape;
 
     QFile file("shapes.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -57,7 +58,7 @@ void ShapeParser::ReadInShape()
         }
         else if(key == "ShapeDimensions")
         {
-            // Pretty sure you need a vector here to store dimensions
+            shapeDimensions = value;
         }
         else if(key == "PenColor")
         {
@@ -336,42 +337,50 @@ void ShapeParser::ReadInShape()
             }
         }
 
+        QBrush brush(brushColor, brushStyle);
+        QPen pen(brush, penWidth, penStyle, capStyle, joinStyle);
+        pen.setColor(textColor);
+
+        QStringList splitDims = shapeDimensions.split(",");
+
+        for(int i = 0; i < splitDims.length(); i++)
+        {
+            splitDims[i] = splitDims[i].trimmed();
+        }
+
         // Creates specified shape type & intializes with read in values
         if(shapeType == "Line")
         {
-
+            newShape = new Line(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
         }
         else if(shapeType == "Polyline")
         {
-
+            newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
         }
         else if(shapeType == "Polygon")
         {
-
+            newShape = new Polygon(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
         }
         else if(shapeType == "Rectangle")
         {
-
+            newShape = new Rectangle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
         }
         else if(shapeType == "Square")
         {
-
-        }
-        else if(shapeType == "Rectangle")
-        {
-
+            //Create square class
         }
         else if(shapeType == "Ellipse")
         {
-
+            newShape = new Ellipse(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
         }
         else if(shapeType == "Circle")
         {
-
-        }
-        else if(shapeType == "Ellipse")
-        {
-
+            // Class needs to be created
         }
     }// END - while
 }// END - ReadInShape(void)

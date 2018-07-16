@@ -8,6 +8,10 @@
 #include <QRect>
 #include <QString>
 #include <QColor>
+#include <QBrush>
+#include <QPen>
+#include <QFont>
+#include <QFontInfo>
 
 #include <cmath>
 

@@ -8,20 +8,15 @@ class Polyline: public Shape
 public:
     // **** CONSTRUCTORS ***************** //
     Polyline();
-    Polyline(int x1, int y1, int x2, int y2, int x3, int y3);
+    Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3);
     // **** DESTRUCTOR ***************** //
     virtual ~Polyline();
     // **** VIRTUAL ***************** //
-    virtual void drawShape();
+    virtual void drawShape(QPainter* painter);
     virtual void moveShape();
-    virtual float calcPerimShape();
-    virtual float calcAreaShape();
-
-    // **** ACCESSOR ***************** //
-    // **** MUTATOR ***************** //
-
+//    virtual float calcPerimShape();
+//    virtual float calcAreaShape();
 private:
-    QPolygon polyline;
     int x1;
     int x2;
     int x3;

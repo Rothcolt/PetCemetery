@@ -1,11 +1,14 @@
-#include "mainwindow.h"
-#include <QApplication>
+#include "Inclusion_Tools.h"
+#include "rectangle.h"
+#include "ellipse.h"
+#include "line.h"
+#include "polygon.h"
+#include "polyline.h"
+#include "shapeparser.h"
+#include "text.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
 
-    return a.exec();
+    return 0;
 }

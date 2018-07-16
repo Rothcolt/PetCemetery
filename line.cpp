@@ -1,46 +1,49 @@
 #include "line.h"
 
 Line::Line()
+    :Shape()
 {
-    line.setLine(0, 0, 50, 50);
-    x1 = 0;
-    y1 = 0;
-    x2 = 50;
-    y2 = 50;
-
-//    ptr = this;
+    this->x1 = 0;
+    this->y1 = 0;
+    this->x2 = 0;
+    this->y2 = 0;
+    this->id = 0;
 }
 
-Line::Line(int xI, int yI, int xII, int yII)
+Line::Line(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2)
 {
-    line.setLine(xI, yI, xII, yII);
-    x1 = xI;
-    y1 = yI;
-    x2 = xII;
-    y2 = yII;
-
-//    ptr = this;
+    this->x1 = x1;
+    this->y1 = y1;
+    this->x2 = x2;
+    this->y2 = y2;
+    this->id = id;
+    this->pen = QPen(pen);
+    this->brush = QBrush(brush);
 }
 
-void Line::drawShape()
+Line::~Line()
 {
-    // Uses pointer to access and invoke QPainter object drawLine function
-//    ptr->artist.drawLine(line);
+
 }
 
-void Line::moveShape(int xI, int yI, int xII, int yII)
+void Line::drawShape(QPainter* painter)
+{
+    painter->drawLine(x1, y1, x2, y2);
+}
+
+void Line::moveShape()
 {
     // Uses line method to reset position
-    line.setLine(xI, yI, xII, yII);
+//    line.setLine(xI, yI, xII, yII);
 }
 
-float Line::calcPerimShape()
-{
-    // Returns the result of the distance formula
-    return sqrt(pow((static_cast<float>(x1) + static_cast<float>(x2)), (2.0)) - pow((static_cast<float>(y1) + static_cast<float>(y2)), (2.0)));
-}
+//float Line::calcPerimShape()
+//{
+//    // Returns the result of the distance formula
+//    return sqrt(pow((static_cast<float>(x1) + static_cast<float>(x2)), (2.0)) - pow((static_cast<float>(y1) + static_cast<float>(y2)), (2.0)));
+//}
 
-float Line::calcAreaShape()
-{
-    return 0.0;
-}
+//float Line::calcAreaShape()
+//{
+//    return 0.0;
+//}

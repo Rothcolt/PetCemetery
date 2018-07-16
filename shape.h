@@ -8,7 +8,7 @@ class Shape
 public:
     // **** CONSTRUCTORS ***************** //
     Shape();
-    Shape(const Shape &copyObject); // Copy constructor
+    Shape(QPen pen, QBrush brush, int id);
 
     // **** DESTRUCTOR ***************** //
     virtual ~Shape();
@@ -16,19 +16,26 @@ public:
     // **** VIRTUAL ***************** //
     virtual void drawShape(QPainter* painter) = 0;
     virtual void moveShape() = 0;
-    virtual float calcPerimShape() = 0;
-    virtual float calcAreaShape() = 0;
-    void setArea();
-    void setPerim();
-    float getArea();
-    float getPerim();
+//    virtual float calcPerimShape() = 0;
+//    virtual float calcAreaShape() = 0;
 
+    // Setters
+//    void setArea();
+//    void setPerim();
+
+    // Getters
+//    float getArea();
+//    float getPerim();
+    QPen getPen();
+    QBrush getBrush();
+    int getId();
 private:
-    float area;
-    float perimeter;
-    QPainter artist; // CLASS OBJECT   : Draws shapes
-    QPen pen;        // CLASS OBJECT   : Holds pen class
-    QBrush brush;    // BRUSH VARIABLE : Holds brush class
+//    float area;      // Shape's calculated area
+//    float perimeter; // Shape's caluclated perimeter
+protected:
+    QPen pen;              // Pen used on shape
+    QBrush brush;          // Brush used on shape
+    int id;                // Shape IDa
 };
 
 #endif // SHAPE_H

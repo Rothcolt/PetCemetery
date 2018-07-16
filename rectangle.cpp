@@ -1,21 +1,28 @@
 #include "rectangle.h"
 
 Rectangle::Rectangle()
+    :Shape()
 {
-    x1 = 0;
-    y1 = 0;
+    this->x1 = 0;
+    this->y1 = 0;
     length = 0;
     width  = 0;
 }
 
-Rectangle::Rectangle(int xI, int yI, int w, int l)
+Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
 {
-   x1 = xI;
-   y1 = yI;
+   this->x1 = x1;
+   this->y1 = y1;
    length = l;
    width  = w;
-   setArea();
-   setPerim();
+   this->id = id;
+   this->pen = QPen(pen);
+   this->brush = QBrush(brush);
+}
+
+Rectangle::~Rectangle()
+{
+
 }
 
 void Rectangle::drawShape(QPainter* painter)
@@ -23,10 +30,9 @@ void Rectangle::drawShape(QPainter* painter)
     painter->drawRect(x1, y1, width, length);
 }
 
-void Rectangle::moveShape(int x1, int y1)
+void Rectangle::moveShape()
 {
-    this->x1 = x1;
-    this->y1 = y1;
+
 }
 
 float Rectangle::calcPerimShape()

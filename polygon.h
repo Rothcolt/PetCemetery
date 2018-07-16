@@ -8,19 +8,23 @@ class Polygon: public Shape
 public:
     // **** CONSTRUCTORS ***************** //
     Polygon();
-    Polygon(int index, int x1, int y1, int x2, int y2, int x3, int y3);
+    Polygon(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3);
     // **** DESTRUCTOR ***************** //
     virtual ~Polygon();
     // **** VIRTUAL ***************** //
-    virtual void drawShape();
+    virtual void drawShape(QPainter* painter);
     virtual void moveShape();
-    virtual float calcPerimShape();
-    virtual float calcAreaShape();
+//    virtual float calcPerimShape();
+//    virtual float calcAreaShape();
     // **** ACCESSOR ***************** //
     // **** MUTATOR ***************** //
 private:
-    QPolygon polygon;                        // CLASS OBJECT : Holds polygon points
-    Qt::FillRule fillRule = Qt::OddEvenFill; // QT Variable  : Holds fill rule
+    int x1;
+    int x2;
+    int x3;
+    int y1;
+    int y2;
+    int y3;
 };
 
-#endif // POLYGON_H
+#endif // POLYGON_Ha

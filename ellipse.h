@@ -8,16 +8,14 @@ class Ellipse: public Shape
 public:
     // **** CONSTRUCTORS ***************** //
     Ellipse();
-    Ellipse(int xI, int yI, int aI, int bI);
+    Ellipse(QPen pen, QBrush brush, int id, int x1, int y1, int a, int b);
     // **** DESTRUCTOR ***************** //
     virtual ~Ellipse();
     // **** VIRTUAL ***************** //
-    virtual void drawShape();
+    virtual void drawShape(QPainter* painter);
     virtual void moveShape();
-    virtual void calcPerimShape();
-    virtual void calcAreaShape();
-    // **** ACCESSOR ***************** //
-    // **** MUTATOR ***************** //
+//    virtual float calcPerimShape();
+//    virtual float calcAreaShape();
 private:
     int x1; // Position Variable : Holds x-coordinate for text box
     int y1; // Position Variable : Holds y-coordinate for text box
