@@ -2,12 +2,7 @@
 
 
 /** @brief Graph::edgeWeight
- * This method will return the weight between the given indices.
- *
- * @param v1 vertex index 1
- * @param v2 vertex index 2
- *
- * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
+ * This method will return the weight between the given indices. */
 template<class Type>
 Vector<Type>::Vector() {
 
