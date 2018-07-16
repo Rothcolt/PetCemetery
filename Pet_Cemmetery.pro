@@ -14,12 +14,9 @@ HEADERS += \
     text.h \
     shapeparser.h \
     vector.h \
-<<<<<<< HEAD
-    login.h
-=======
+    login.h \
     square.h \
     circle.h
->>>>>>> ff2c259bdc565e5e41a1a0e619e653dde2da8cbf
 
 SOURCES += \
     line.cpp \
@@ -32,12 +29,10 @@ SOURCES += \
     shapeparser.cpp \
     main.cpp \
     vector.cpp \
-<<<<<<< HEAD
-    login.cpp
+    login.cpp \
+    square.cpp \
+    circle.cpp
 
 FORMS += \
     login.ui
-=======
-    square.cpp \
-    circle.cpp
->>>>>>> ff2c259bdc565e5e41a1a0e619e653dde2da8cbf
+
