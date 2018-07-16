@@ -1,5 +1,5 @@
-// #ifndef VECTOR_H
-// #define VECTOR_H
+#ifndef VECTOR_H
+#define VECTOR_H
 
 #include "shape.h"
 
@@ -7,7 +7,8 @@
 const int DFL_SIZE = 20;
 
 /*! Approximates the STL vector. */
-template<class Type> class Vector {
+template<class Type>
+class Vector {
 
 public:
 
@@ -17,10 +18,10 @@ public:
     Vector();                                   /*! Default constructor.       */
     explicit Vector(int s);                     /*! Parameterized constructor. */
 
-    Vector(const vector&);                      /*! Copy constructor.          */
-    Vector(vector&&);                           /*! Move constructor.          */
-    Vector& operator=();                        /*! Copy assignment operator.  */
-    Vector& operator=();                        /*! Move assignment operator.  */
+    Vector(const Vector&);                      /*! Copy constructor.          */
+    Vector(Vector&&);                           /*! Move constructor.          */
+    Vector& operator=(const Vector& rhs);                        /*! Copy assignment operator.  */
+    Vector& operator=(Vector&& rhs);                        /*! Move assignment operator.  */
     ~Vector();                                  /*! Default denstructor.       */
 
     Type& operator[] (int n);                   /*! Accessor: Return reference.     */
@@ -41,7 +42,7 @@ public:
     iterator end();                             /*! Points to one element beyond last. */
     const_iterator end() const;                 /*! Points to one element beyond last. */
 
-    iterator insert(iterator p, const T& v);    /*! Insert new element v before p.  */
+    iterator insert(iterator p, const Type& v); /*! Insert new element v before p.  */
     iterator erase(iterator p);                 /*! Remove element pointed to by p. */
 
 
