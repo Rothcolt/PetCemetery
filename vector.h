@@ -20,8 +20,8 @@ public:
 
     Vector(const Vector&);                      /*! Copy constructor.          */
     Vector(Vector&&);                           /*! Move constructor.          */
-    Vector& operator=(const Vector& rhs);                        /*! Copy assignment operator.  */
-    Vector& operator=(Vector&& rhs);                        /*! Move assignment operator.  */
+    Vector& operator=(const Vector& rhs);       /*! Copy assignment operator.  */
+    Vector& operator=(Vector&& rhs);            /*! Move assignment operator.  */
     ~Vector();                                  /*! Default denstructor.       */
 
     Type& operator[] (int n);                   /*! Accessor: Return reference.     */

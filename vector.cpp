@@ -83,7 +83,7 @@ Vector<Type>::~Vector() {
 
     //! Accessor: Return reference.
     template<class Type>
-    const Vector<Type>::Type& operator[] (int n) {
+    const Type& Vector<Type>::operator[] (int n) {
         return elem[n];
     }
 
