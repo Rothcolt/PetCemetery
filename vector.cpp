@@ -4,6 +4,8 @@
 //! Default constructor.
 template<class Type>
 Vector<Type>::Vector() {
+
+    // Declare base elements.
     elem = new Type[DFL_SIZE];
     size_v = 0;
     space = DFL_SIZE - size_v;
@@ -13,7 +15,9 @@ Vector<Type>::Vector() {
 
 //! Parameterized constructor.
 template<class Type>
-explicit Vector<Type>::Vector(int s) {
+Vector<Type>::Vector(int s) {
+
+    // Declare base elements.
     elem = new Type[s];
     size_v = 0;
     space = s - size_v;
@@ -21,21 +25,29 @@ explicit Vector<Type>::Vector(int s) {
     return;
 }
 
-    //! Copy constructor.
-    template<class Type>
-    Vector<Type>::Vector(const vector& source)
-        : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
+//! Copy constructor.
+template<class Type>
+Vector<Type>::Vector(const Vector<Type>& source)
+    : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
 
-        size_v = source.size_v;
+    // Copy non-dynamic elements.
+    size_v = source.size_v;
+    space = source.space;
 
-        return;
+    // Copy all elements individually.
+    for (int i = 0; i < size_v; i++) {
+        elem[i] = source.elem[i];
     }
+
+    return;
+}
 
 //! Move constructor.
 template<class Type>
-Vector<Type>::Vector(vector&& source)
+Vector<Type>::Vector(Vector<Type>&& source)
     : size_v { source.size_v }, elem { source.elem }, space { source.space } {
 
+    // Release/reset source elements.
     source.size_v = 0;
     source.elem = NULL;
     source.space = 0;
@@ -45,13 +57,13 @@ Vector<Type>::Vector(vector&& source)
 
     //! Copy assignment operator.
     template<class Type>
-    Vector<Type>::Vector& operator=(const Vector& rhs) {
+    Vector<Type>& Vector<Type>::operator=(const Vector& rhs) {
         return;
     }
 
     //! Move assignment operator.
     template<class Type>
-    Vector<Type>::Vector& operator=(Vector&& rhs) {
+    Vector<Type>& Vector<Type>::operator=(Vector&& rhs) {
         return;
     }
 
