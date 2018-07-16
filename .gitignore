@@ -1,7 +1,7 @@
-*.pro.user
+*.pro.user*
 *.o
 moc_*
-paint
+PetCemetery
 ui_*
 .qmake*
 .DS_Store
