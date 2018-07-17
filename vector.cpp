@@ -1,8 +1,8 @@
 #include "vector.h"
 
 
-/** @brief Graph::edgeWeight
- * This method will return the weight between the given indices. */
+/** @brief Vector<Type>::Vector
+ * Generates a new vector object. */
 template<class Type>
 Vector<Type>::Vector() {
 
@@ -16,12 +16,8 @@ Vector<Type>::Vector() {
 
 
 
-/** @brief Graph::edgeWeight
- * This method will return the weight between the given indices.
- *
- * @param s / Size of the new vector.
- *
- * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
+/** @brief Vector<Type>::Vector
+ * Generates a new vector object, with parameters. */
 template<class Type>
 Vector<Type>::Vector(int s) {
 
@@ -34,10 +30,10 @@ Vector<Type>::Vector(int s) {
 }
 
 
-/*! Copy constructor.
+/** @brief Vector<Type>::Vector
+ * Copy constructor for the vector class object.
  *
- * Vector& source: The vector object being copied.
- */
+ * @param source Vector object to be copied. */
 template<class Type>
 Vector<Type>::Vector(const Vector<Type>& source)
     : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
@@ -57,7 +53,7 @@ Vector<Type>::Vector(const Vector<Type>& source)
 
 
 /** @brief Vector<Type>::Vector
- * Copy constructor for the vector class object.
+ * Move constructor for the vector class object.
  *
  * @param source Vector object to be copied. */
 template<class Type>
@@ -100,10 +96,11 @@ Vector<Type>& Vector<Type>::operator=(const Vector& rhs) {
 }
 
 
-/*! Move assignment operator.
+/** @brief Vector<Type>::operator=
+ * Move assignment operator for the vector class object.
  *
- * Vector& rhs: The vector to the right of the operator.
- */
+ * @param rhs Vector object to the right of the operator.
+ * @return *this A pointer to the newly-modified object. */
 template<class Type>
 Vector<Type>& Vector<Type>::operator=(Vector&& rhs) {
 
@@ -126,10 +123,8 @@ Vector<Type>& Vector<Type>::operator=(Vector&& rhs) {
 }
 
 
-/*! Default destructor.
- *
- * No parameters used.
- */
+/** @brief Vector<Type>::operator=
+ * Default destructor for the vector class object. */
 template<class Type>
 Vector<Type>::~Vector() {
 
@@ -139,12 +134,12 @@ Vector<Type>::~Vector() {
 }
 
 
-/** @brief Vector<type>::operator
+/** @brief Vector<type>::operator[]
  * This method will return a reference to an indexed array element.
  *
- * @param n / Index of the array element to be returned..
+ * @param n Index of the array element to be returned.
  *
- * @return weight / distance between the 2 given vertices. Will return a value less than 0 if no edge exists. */
+ * @return *this->elem[n] Reference to indexed array element. */
 template<class Type>
 Type& Vector<Type>::operator[](int n) {
 
@@ -152,21 +147,23 @@ Type& Vector<Type>::operator[](int n) {
 }
 
 
-/*! Accessor: Return reference.
+/** @brief Vector<type>::operator[]
+ * This method will return a value from an indexed array element.
  *
- * int n: Index of the element being returned.
- */
+ * @param n Index of the array element to be returned.
+ *
+ * @return *this->elem[n] Value of indexed array element. */
 template<class Type>
 const Type& Vector<Type>::operator[](int n) const {
 
-    return *this->elem[n];
+    return this->elem[n];
 }
 
 
-/*! Accessor: Return current size.
+/** @brief Vector<type>::size()
+ * This method will return the size of the vector array.
  *
- * No parameters used.
- */
+ * @return size Array size. */
 template<class Type>
 int Vector<Type>::size() const {
 
@@ -174,10 +171,10 @@ int Vector<Type>::size() const {
 }
 
 
-/*! Accessor: Return current space.
+/** @brief Vector<type>::space()
+ * This method will return the remaining space in the vector array.
  *
- * No parameters used.
- */
+ * @return space Remaining space. */
 template<class Type>
 int Vector<Type>::capacity() const {
 
@@ -185,10 +182,10 @@ int Vector<Type>::capacity() const {
 }
 
 
-/*! Mutator: Change the size of the vector.
+/** @brief Vector<type>::newsize()
+ * This method will modify the remaining space in the vector.
  *
- * int newsize: New size of the vector.
- */
+ * @param newsize New vector size. */
 template<class Type>
 void Vector<Type>::resize(int newsize)  {
 
@@ -198,10 +195,10 @@ void Vector<Type>::resize(int newsize)  {
 }
 
 
-/*! Mutator: Add an element to the vector.
+/** @brief Vector<type>::push_back
+ * This method will add a new element to the vector.
  *
- * Type new_elem: Element to be pushed to vector.
- */
+ * @param new_elem Element to be added. */
 template<class Type>
 void Vector<Type>::push_back(Type new_elem) {
 
