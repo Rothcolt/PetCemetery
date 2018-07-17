@@ -20,6 +20,14 @@ void login::on_pushButton_login_clicked()
 
        if(username == "shrek" && password == "swamp")
        {
+           QMessageBox::information(this, "Login", "Admin username and password is correct");
+
+          // hide();                          // This will hide the login window after entering in correct login
+          // secDialog = new SecDialog(this); // creates a new window
+          // secDialog->show();               // shows new window
+       }
+
+       else if(username == "donkey" && password == "waffles") {
            QMessageBox::information(this, "Login", "Username and password is correct");
 
           // hide();                          // This will hide the login window after entering in correct login
