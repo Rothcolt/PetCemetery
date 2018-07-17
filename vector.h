@@ -3,10 +3,10 @@
 
 #include "shape.h"
 
-/*! Default vector size. */
+/* Default vector size. */
 const int DFL_SIZE = 20;
 
-/*! Approximates the STL vector. */
+/* Approximates the STL vector. */
 template<class Type>
 class Vector {
 
@@ -14,34 +14,34 @@ class Vector {
 
 private:
 
-    int size_v;                                 /*! Vector size.         */
-    Type* elem;                                 /*! Element pointer.     */
-    int space;                                  /*! Size + free space.   */
+    int size_v;                                 /* Vector size.         */
+    Type* elem;                                 /* Element pointer.     */
+    int space;                                  /* Size + free space.   */
 
 /***************************************************************************************************/
 
 public:
 
-    /*! Vector class for storing shape objects.
-     *  Calls upon shape.h for element type. */
+    /* Vector class for storing shape objects.
+     * Calls upon shape.h for element type. */
 
-    Vector();                                   /*! Default constructor.       */
-    explicit Vector(int s);                     /*! Parameterized constructor. */
+    Vector();                                   /* Default constructor.       */
+    explicit Vector(int s);                     /* Parameterized constructor. */
 
-    Vector(const Vector&);                      /*! Copy constructor.          */
-    Vector(Vector&&);                           /*! Move constructor.          */
-    Vector& operator=(const Vector& rhs);       /*! Copy assignment operator.  */
-    Vector& operator=(Vector&& rhs);            /*! Move assignment operator.  */
-    ~Vector();                                  /*! Default denstructor.       */
+    Vector(const Vector&);                      /* Copy constructor.          */
+    Vector(Vector&&);                           /* Move constructor.          */
+    Vector& operator=(const Vector& rhs);       /* Copy assignment operator.  */
+    Vector& operator=(Vector&& rhs);            /* Move assignment operator.  */
+    ~Vector();                                  /* Default denstructor.       */
 
-    Type& operator[](int n);                    /*! Accessor: Return reference.     */
-    const Type& operator[](int n) const;        /*! Accessor: Return reference.     */
-    int size() const;                           /*! Accessor: Return current size.  */
-    int capacity() const;                       /*! Accessor: Return current space. */
+    Type& operator[](int n);                    /* Accessor: Return reference.     */
+    const Type& operator[](int n) const;        /* Accessor: Return reference.     */
+    int size() const;                           /* Accessor: Return current size.  */
+    int capacity() const;                       /* Accessor: Return current space. */
 
-    void resize(int newsize);                   /*! Mutator: Change the size of the vector. */
-    void push_back(Type new_elem);              /*! Mutator: Add an element to the vector.  */
-    void reserve(int newalloc);                 /*! Mutator: Allocate more space to vector. */
+    void resize(int newsize);                   /* Mutator: Change the size of the vector. */
+    void push_back(Type new_elem);              /* Mutator: Add an element to the vector.  */
+    void reserve(int newalloc);                 /* Mutator: Allocate more space to vector. */
 
 /***************************************************************************************************/
 
