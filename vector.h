@@ -48,33 +48,50 @@ public:
 // These functions were unable to be defined outside the header file.
 
     // Iterator alisases.
-    using v_iterator = Type*;                                /*! Aliased iterator.       */
-    using const_iterator = const Type*;                      /*! Aliased const iterator. */
+    using v_iterator = Type*;                                /* Aliased iterator.       */
+    using const_iterator = const Type*;                      /* Aliased const iterator. */
 
-    // Return first value in vector.
-    v_iterator begin() { return &elem[0]; }                  /*! Points to first element. */
-    const_iterator begin() const { return &elem[0]; }        /*! Points to first element. */
+    /** @brief Vector<type>::begin
+     * This method will point to the first vector value.
+     * @return &elem[0] Reference to beginning array element. */
+    v_iterator begin() { return &elem[0]; }
 
-    // Return one value beyond the end.
-    v_iterator end() { return &elem[size_v + 1]; }           /*! Points to one element beyond last. */
-    const_iterator end() const { return &elem[size_v + 1]; } /*! Points to one element beyond last. */
+    /** @brief Vector<type>::begin
+     * This method will point to the first vector value.
+     * @return &elem[0] Reference to beginning array element. */
+    const_iterator begin() const { return &elem[0]; }
 
-    /*! Insert new element v before p.  */
+    /** @brief Vector<type>::end
+     * This method will point to one after the last vector value.
+     * @return &elem[size_v + 1] Reference to postfinal array element. */
+    v_iterator end() { return &elem[size_v + 1]; }
+
+    /** @brief Vector<type>::end
+     * This method will point to one after the last vector value.
+     * @return &elem[size_v + 1] Reference to postfinal array element. */
+    const_iterator end() const { return &elem[size_v + 1]; }
+
+    /** @brief Vector<type>::end
+     * This method will insert new element v before p.
+     * @return *this Reference to vector. */
     v_iterator insert(v_iterator p, const Type& v) {
 
         // Add new element to the array.
         p - 1 = v;
 
-        return;
+        return *this;
     }
 
-    /*! Remove element pointed to by p. */
+    /** @brief Vector<type>::end
+     * This method will remove element pointed to by p.
+     * @param p Pointer to vector element.
+     * @return *this Reference to vector. */
     v_iterator erase(v_iterator p) {
 
         // Release memory at p.
         delete p;
 
-        return;
+        return *this;
     }
 
 /***************************************************************************************************/
