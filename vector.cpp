@@ -160,7 +160,7 @@ const Type& Vector<Type>::operator[](int n) const {
 }
 
 
-/** @brief Vector<type>::size()
+/** @brief Vector<type>::size
  * This method will return the size of the vector array.
  *
  * @return size Array size. */
@@ -171,7 +171,7 @@ int Vector<Type>::size() const {
 }
 
 
-/** @brief Vector<type>::space()
+/** @brief Vector<type>::space
  * This method will return the remaining space in the vector array.
  *
  * @return space Remaining space. */
@@ -182,7 +182,7 @@ int Vector<Type>::capacity() const {
 }
 
 
-/** @brief Vector<type>::newsize()
+/** @brief Vector<type>::newsize
  * This method will modify the remaining space in the vector.
  *
  * @param newsize New vector size. */
@@ -216,9 +216,10 @@ void Vector<Type>::push_back(Type new_elem) {
 }
 
 
-/**
+/** @brief Vector<type>::reserve
+ * This method will allocate space to the vector object.
  *
- */
+ * @param newalloc Space to be reserved. */
 template<class Type>
 void Vector<Type>::reserve(int newalloc) {
 
