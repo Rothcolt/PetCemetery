@@ -349,38 +349,38 @@ void ShapeParser::ReadInShape() {
         }
 
         // Creates specified shape type & intializes with read in values
-        if(shapeType == "Line")
-        {
-            newShape = new Line(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-                    splitDims[2].toInt(), splitDims[3].toInt());
-        }
-        else if(shapeType == "Polyline")
-        {
-            newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
-        }
-        else if(shapeType == "Polygon")
-        {
-            newShape = new Polygon(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
-        }
-        else if(shapeType == "Rectangle")
-        {
-            newShape = new Rectangle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-                    splitDims[2].toInt(), splitDims[3].toInt());
-        }
-        else if(shapeType == "Square")
-        {
-            //Create square class
-        }
-        else if(shapeType == "Ellipse")
-        {
-            newShape = new Ellipse(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-                    splitDims[2].toInt(), splitDims[3].toInt());
-        }
-        else if(shapeType == "Circle")
-        {
-            // Class needs to be created
-        }
+//        if(shapeType == "Line")
+//        {
+//            newShape = new Line(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+//                    splitDims[2].toInt(), splitDims[3].toInt());
+//        }
+//        else if(shapeType == "Polyline")
+//        {
+//            newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+//                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
+//        }
+//        else if(shapeType == "Polygon")
+//        {
+//            newShape = new Polygon(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+//                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
+//        }
+//        else if(shapeType == "Rectangle")
+//        {
+//            newShape = new Rectangle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+//                    splitDims[2].toInt(), splitDims[3].toInt());
+//        }
+//        else if(shapeType == "Square")
+//        {
+//            //Create square class
+//        }
+//        else if(shapeType == "Ellipse")
+//        {
+//            newShape = new Ellipse(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+//                    splitDims[2].toInt(), splitDims[3].toInt());
+//        }
+//        else if(shapeType == "Circle")
+//        {
+//            // Class needs to be created
+//        }
     }// END - while
 }// END - ReadInShape(void)

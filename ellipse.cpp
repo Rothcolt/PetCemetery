@@ -1,19 +1,17 @@
 #include "ellipse.h"
 
 //! Default constructor.
-Ellipse::Ellipse() :Shape() {
-
+Ellipse::Ellipse() :Shape()
+{
     x1 = 0;
     y1 = 0;
     a = 0;
     b = 0;
-
-    return;
 }
 
 //! Paramterized constructor with all variables.
-Ellipse::Ellipse(QPen pen, QBrush brush, int id, int x1, int y1, int a, int b) {
-
+Ellipse::Ellipse(QPainter *painter, QPen pen, QBrush brush, int id, int x1, int y1, int a, int b)
+{
     this->x1 = x1;
     this->y1 = y1;
     this->a = a;
@@ -21,31 +19,22 @@ Ellipse::Ellipse(QPen pen, QBrush brush, int id, int x1, int y1, int a, int b) {
     this->pen = QPen(pen);
     this->brush = QBrush(brush);
     this->id = id;
-
-    return;
 }
 
 //! Default destructor.
-Ellipse::~Ellipse() {
-
-    return;
-}
+Ellipse::~Ellipse() {}
 
 //! Draw the shape in the paint module.
-void Ellipse::drawShape(QPainter* painter) {
-
+void Ellipse::drawShape()
+{
     painter->drawEllipse(x1, y1, a, b);
-
-    return;
 }
 
 //! Change coordinates and move shape.
-void Ellipse::moveShape() {
-
+void Ellipse::moveShape()
+{
     // Resets rectangle coordinates
     // rectangle.moveTo(x1, y1);
-
-    return;
 }
 
 //! Return perimeter (not required).

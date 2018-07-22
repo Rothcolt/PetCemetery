@@ -11,6 +11,8 @@
 #include "polygon.h"
 #include "polyline.h"
 #include "rectangle.h"
+#include "circle.h"
+#include "square.h"
 #include "text.h"
 using namespace std;
 

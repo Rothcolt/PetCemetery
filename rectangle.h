@@ -11,14 +11,14 @@ public:
      * Able to be drawn and moved. */
 
     Rectangle();                                    /*! Default constructor.      */
-    Rectangle(QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
+    Rectangle(QPainter* painter, QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
               int x1, int y1, int w, int l);        /*! with all variables.       */
     virtual ~Rectangle();                           /*! Default destructor.       */
 
-    virtual void drawShape(QPainter* painter);      /*! Draw the shape in the paint module. */
+    virtual void drawShape();      /*! Draw the shape in the paint module. */
     virtual void moveShape();                       /*! Change coordinates and move shape.  */
-    virtual float calcPerimShape();                 /*! Return perimeter (not required).    */
-    virtual float calcAreaShape();                  /*! Return area (not required).         */
+//    virtual float calcPerimShape();                 /*! Return perimeter (not required).    */
+//    virtual float calcAreaShape();                  /*! Return area (not required).         */
 
 private:
     int x1;         /*! Position Variable : Holds x-coordinate for text box. */

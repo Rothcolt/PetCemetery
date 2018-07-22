@@ -11,11 +11,11 @@ public:
      * Able to be drawn and moved. */
 
     Ellipse();                                  /*! Default constructor.      */
-    Ellipse(QPen pen, QBrush brush, int id,     /*! Paramterized constructor  */
+    Ellipse(QPainter* painter, QPen pen, QBrush brush, int id,     /*! Paramterized constructor  */
             int x1, int y1, int a, int b);      /*! with all variables.       */
     virtual ~Ellipse();                         /*! Default destructor.       */
 
-    virtual void drawShape(QPainter* painter);  /*! Draw the shape in the paint module. */
+    virtual void drawShape();  /*! Draw the shape in the paint module. */
     virtual void moveShape();                   /*! Change coordinates and move shape.  */
 /*  virtual float calcPerimShape(); */          /*! Return perimeter (not required).    */
 /*  virtual float calcAreaShape();  */          /*! Return area (not required).         */

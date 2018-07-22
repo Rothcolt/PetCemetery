@@ -11,11 +11,11 @@ public:
      * Able to be drawn and moved. */
 
     Circle();                                   /*! Default constructor.      */
-    Circle(QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
+    Circle(QPainter *painter, QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
            int xc, int yc, int r);              /*! with all variables.       */
     virtual ~Circle();                          /*! Default destructor.       */
 
-    virtual void drawShape(QPainter* painter);  /*! Draw the shape in the paint module. */
+    virtual void drawShape();  /*! Draw the shape in the paint module. */
     virtual void moveShape();                   /*! Change coordinates and move shape.  */
 /*  virtual float calcPerimShape(); */          /*! Return perimeter (not required).    */
 /*  virtual float calcAreaShape();  */          /*! Return area (not required).         */

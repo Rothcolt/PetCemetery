@@ -2,22 +2,20 @@
 
 
 //! Default constructor.
-Polyline::Polyline() : Shape() {
-
+Polyline::Polyline() : Shape()
+{
     this->x1 = 0;
     this->x2 = 0;
     this->x3 = 0;
     this->y1 = 0;
     this->y2 = 0;
     this->y3 = 0;
-
-    return;
 }
 
 
 //! Paramterized constructor with all variables.
-Polyline::Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3) {
-
+Polyline::Polyline(QPainter *painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+{
     // Polyline variables.
     this->x1 = x1;
     this->x2 = x2;
@@ -30,37 +28,27 @@ Polyline::Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y
     this->pen = QPen(pen);
     this->brush = QBrush(brush);
     this->id = id;
-
-    return;
 }
-
 
 //! Default destructor.
-Polyline::~Polyline() {
+Polyline::~Polyline()
+{
 
-    return;
 }
-
 
 //! Draw the shape in the paint module.
-void Polyline::drawShape(QPainter* painter) {
-
+void Polyline::drawShape()
+{
     // Uses pointer to access and invoke QPainter object drawPolygone function
     // painter->drawPolyline();
-
-    return;
 }
-
 
 //! Change coordinates and move shape.
-void Polyline::moveShape() {
-
+void Polyline::moveShape()
+{
     // Resets polygon coordinates
     // polygon.setPoints(3, x1, y1, x2, y2, x3, y3);
-
-    return;
 }
-
 
 //! Return perimeter (not required).
 /* float Polyline::calcPerimShape() {

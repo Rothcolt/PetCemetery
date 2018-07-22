@@ -12,7 +12,7 @@ Polygon::Polygon() : Shape()
 }
 
 //! Paramterized constructor with all variables.
-Polygon::Polygon(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+Polygon::Polygon(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
 {
     this->x1 = x1;
     this->x2 = x2;
@@ -26,27 +26,20 @@ Polygon::Polygon(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2,
 }
 
 //! Default destructor.
-Polygon::~Polygon() {
-
-    return;
-}
+Polygon::~Polygon() {}
 
 //! Draw the shape in the paint module.
-void Polygon::drawShape(QPainter* painter) {
-
+void Polygon::drawShape()
+{
     // Uses pointer to access and invoke QPainter object drawPolygone function.
     // painter->drawPolygon(this, Qt::OddEvenFill);
-
-    return;
 }
 
 //! Change coordinates and move shape.
-void Polygon::moveShape() {
-
+void Polygon::moveShape()
+{
     // Resets polygon coordinates.
     // setPoints(3, x1, y1, x2, y2, x3, y3);
-
-    return;
 }
 
 //! Return perimeter (not required).

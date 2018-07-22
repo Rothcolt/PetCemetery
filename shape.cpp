@@ -4,14 +4,16 @@
 Shape::Shape() {
 
     this->id = 0;
-    this->pen.setStyle(Qt::PenStyle::SolidLine);
-    this->pen.setColor(Qt::GlobalColor::black);
-    this->pen.setWidth(10);
-    this->pen.setCapStyle(pen.capStyle());
-    this->pen.setJoinStyle(pen.joinStyle());
+//    this->pen.setStyle(Qt::PenStyle::SolidLine);
+//    this->pen.setColor(Qt::GlobalColor::black);
+//    this->pen.setWidth(10);
+//    this->pen.setCapStyle(pen.capStyle());
+//    this->pen.setJoinStyle(pen.joinStyle());
 
-    this->brush.setColor(brush.color());
-    this->brush.setStyle(brush.style());
+//    this->brush.setColor(brush.color());
+//    this->brush.setStyle(brush.style());
+    pen = QPen();
+    brush = QBrush();
 
     return;
 }
@@ -74,6 +76,11 @@ Shape::~Shape() {
     return penStyle;
 } */
 
+//! Getter for the QPainter object
+QPainter* Shape::getPainter()
+{
+    return painter;
+}
 
 //! Getter for the QPen object.
 QPen Shape::getPen() {

@@ -1,19 +1,17 @@
 #include "circle.h"
 
 //! Default constructor.
-Circle::Circle() : Shape() {
-
+Circle::Circle() : Shape()
+{
     x = 0;
     y = 0;
     radius = 0;
-
-    return;
 }
 
 
 //! Paramterized constructor with all variables.
-Circle::Circle(QPen pen, QBrush brush, int id, int xc, int yc, int r) {
-
+Circle::Circle(QPainter *painter, QPen pen, QBrush brush, int id, int xc, int yc, int r)
+{
     // Circle variables.
     this->x = xc;
     this->y = yc;
@@ -23,34 +21,26 @@ Circle::Circle(QPen pen, QBrush brush, int id, int xc, int yc, int r) {
     this->pen = QPen(pen);
     this->brush = QBrush(brush);
     this->id = id;
-
-    return;
 }
 
 
 //! Default destructor.
-Circle::~Circle() {
-
-    return;
-}
+Circle::~Circle()
+{}
 
 
 //! Draw the shape in the paint module.
-void Circle::drawShape(QPainter* painter) {
-
+void Circle::drawShape()
+{
     // Uses pointer to access and invoke QPainter object drawPolygone function.
-    // painter->drawPolygon(this, Qt::OddEvenFill);
-
-    return;
+//     painter->drawPolygon(this, Qt::OddEvenFill);
 }
 
 //! Change coordinates and move shape.
-void Circle::moveShape() {
-
+void Circle::moveShape()
+{
     // Resets square coordinates.
     // setPoints(3, x1, y1, x2, y2, x3, y3);
-
-    return;
 }
 
 //! Return perimeter (not required).
