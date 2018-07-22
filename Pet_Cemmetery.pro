@@ -38,5 +38,7 @@ SOURCES += \
     renderarea.cpp
 
 FORMS += \
-    login.ui
+    login.ui \
+    mainwindow.ui \
+    secdialog.ui
 
