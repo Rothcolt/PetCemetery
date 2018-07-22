@@ -1,6 +1,18 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
+#include "Inclusion_Tools.h"
+#include "rectangle.h"
+#include "ellipse.h"
+#include "line.h"
+#include "polygon.h"
+#include "polyline.h"
+#include "shapeparser.h"
+#include "login.h"
+#include <QApplication>
+#include "text.h"
+#include "window.h"
+
 #include <QDialog>
 
 namespace Ui {
