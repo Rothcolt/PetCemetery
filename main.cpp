@@ -8,6 +8,7 @@
 #include "login.h"
 #include <QApplication>
 #include "text.h"
+#include "window.h"
 
 /*! Main function file for the Qt painter project.
  * Calls upon all files to execute primary functinality */
@@ -19,6 +20,10 @@ int main(int argc, char *argv[]) { // argc(argument count), argv(argument vector
     QApplication qApplication(argc, argv); // Need QApplication to show login screen
     login loginScreen;                     // Creating new login screen
     loginScreen.show();                    // Shows login Screen
+
+    // Display the canvas.
+    Window window;
+    window.show();
 
     return qApplication.exec();
 }

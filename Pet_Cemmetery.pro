@@ -16,7 +16,9 @@ HEADERS += \
     vector.h \
     login.h \
     square.h \
-    circle.h
+    circle.h \
+    window.h \
+    renderarea.h
 
 SOURCES += \
     line.cpp \
@@ -31,7 +33,9 @@ SOURCES += \
     vector.cpp \
     login.cpp \
     square.cpp \
-    circle.cpp
+    circle.cpp \
+    window.cpp \
+    renderarea.cpp
 
 FORMS += \
     login.ui
