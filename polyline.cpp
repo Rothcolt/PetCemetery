@@ -15,6 +15,7 @@ Polyline::Polyline() : Shape()
 
 //! Paramterized constructor with all variables.
 Polyline::Polyline(QPainter *painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+            :Shape(painter, pen, brush, id)
 {
     // Polyline variables.
     this->x1 = x1;
@@ -23,11 +24,6 @@ Polyline::Polyline(QPainter *painter, QPen pen, QBrush brush, int id, int x1, in
     this->y1 = y1;
     this->y2 = y2;
     this->y3 = y3;
-
-    // Qpainter variables.
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
-    this->id = id;
 }
 
 //! Default destructor.

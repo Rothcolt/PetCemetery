@@ -7,20 +7,16 @@ Line::Line() : Shape()
     this->y1 = 0;
     this->x2 = 0;
     this->y2 = 0;
-    this->id = 0;
-
 }
 
 //! Paramterized constructor with all variables.
 Line::Line(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2)
+       :Shape(painter, pen, brush, id)
 {
     this->x1 = x1;
     this->y1 = y1;
     this->x2 = x2;
     this->y2 = y2;
-    this->id = id;
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
 }
 
 //! Default destructor.

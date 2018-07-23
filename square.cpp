@@ -9,17 +9,13 @@ Square::Square() : Shape()
 }
 
 //! Paramterized constructor with all variables.
-Square::Square(QPainter* painter, QPen pen, QBrush brush, int id, int xc, int yc, int l)
+Square::Square(QPainter* painter, QPen pen, QBrush brush, int id, int x, int y, int length)
+           :Shape(painter, pen, brush, id)
 {
     // Square variables.
-    this->x = xc;
-    this->y = yc;
-    this->length = l;
-
-    // Qpainter variables.
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
-    this->id = id;
+    this->x = x;
+    this->y = y;
+    this->length = length;
 }
 
 //! Default destructor.

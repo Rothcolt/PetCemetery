@@ -11,14 +11,12 @@ Rectangle::Rectangle() : Shape()
 
 //! Paramterized constructor with all variables.
 Rectangle::Rectangle(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
+               :Shape(painter, pen, brush, id)
 {
    this->x1 = x1;
    this->y1 = y1;
    length = l;
    width  = w;
-   this->id = id;
-   this->pen = QPen(pen);
-   this->brush = QBrush(brush);
 }
 
 //! Default destructor.

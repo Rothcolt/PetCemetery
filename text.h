@@ -13,8 +13,8 @@ public:
     // **** DESTRUCTOR ***************** //
     virtual ~Text();
     // **** VIRTUAL ***************** //
-//    virtual drawShape();
-//    virtual moveShape();
+    virtual void drawShape();
+    virtual void moveShape();
 //    virtual calcPerimShape();
 //    virtual calcAreaShape();
     void setText(QString text);

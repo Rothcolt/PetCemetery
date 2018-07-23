@@ -10,17 +10,13 @@ Circle::Circle() : Shape()
 
 
 //! Paramterized constructor with all variables.
-Circle::Circle(QPainter *painter, QPen pen, QBrush brush, int id, int xc, int yc, int r)
+Circle::Circle(QPainter *painter, QPen pen, QBrush brush, int id, int x, int y, int radius)
+         :Shape(painter, pen, brush, id)
 {
     // Circle variables.
-    this->x = xc;
-    this->y = yc;
-    this->radius = r;
-
-    // Qpainter variables.
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
-    this->id = id;
+    this->x = x;
+    this->y = y;
+    this->radius = radius;
 }
 
 

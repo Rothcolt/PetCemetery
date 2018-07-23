@@ -12,7 +12,7 @@ public:
 
     Circle();                                   /*! Default constructor.      */
     Circle(QPainter *painter, QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
-           int xc, int yc, int r);              /*! with all variables.       */
+           int x, int y, int radius);              /*! with all variables.       */
     virtual ~Circle();                          /*! Default destructor.       */
 
     virtual void drawShape();  /*! Draw the shape in the paint module. */

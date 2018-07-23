@@ -11,7 +11,7 @@ public:
      * Virtual functions allow shape to be drawn and moved. */
 
     Shape();                                            /*! Default constructor.       */
-    Shape(QPen pen, QBrush brush, int id);              /*! Parameterized constructor. */
+    Shape(QPainter *painter, QPen pen, QBrush brush, int id);              /*! Parameterized constructor. */
     virtual ~Shape();                                   /*! Default destructor.        */
 
     virtual void drawShape() = 0;      /*! Draw the shape in the paint module. */

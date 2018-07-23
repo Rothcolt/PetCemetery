@@ -339,7 +339,10 @@ void ShapeParser::ReadInShape() {
 
         QBrush brush(brushColor, brushStyle);
         QPen pen(brush, penWidth, penStyle, capStyle, joinStyle);
-        pen.setColor(textColor);
+        pen.setColor(penColor);
+        QPainter* painter;
+        painter->setBrush(brush);
+        painter->setPen(pen);
 
         QStringList splitDims = shapeDimensions.split(",");
 
@@ -348,39 +351,46 @@ void ShapeParser::ReadInShape() {
             splitDims[i] = splitDims[i].trimmed();
         }
 
-        // Creates specified shape type & intializes with read in values
-//        if(shapeType == "Line")
-//        {
-//            newShape = new Line(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-//                    splitDims[2].toInt(), splitDims[3].toInt());
-//        }
-//        else if(shapeType == "Polyline")
-//        {
-//            newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-//                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
-//        }
-//        else if(shapeType == "Polygon")
-//        {
-//            newShape = new Polygon(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-//                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
-//        }
-//        else if(shapeType == "Rectangle")
-//        {
-//            newShape = new Rectangle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-//                    splitDims[2].toInt(), splitDims[3].toInt());
-//        }
-//        else if(shapeType == "Square")
-//        {
-//            //Create square class
-//        }
-//        else if(shapeType == "Ellipse")
-//        {
-//            newShape = new Ellipse(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
-//                    splitDims[2].toInt(), splitDims[3].toInt());
-//        }
-//        else if(shapeType == "Circle")
-//        {
-//            // Class needs to be created
-//        }
+         //  Creates specified shape type & intializes with read in values
+        if(shapeType == "Line")
+        {
+            newShape = new Line(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
+        }
+        else if(shapeType == "Polyline")
+        {
+            newShape = new Polyline(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
+        }
+        else if(shapeType == "Polygon")
+        {
+            newShape = new Polygon(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
+        }
+        else if(shapeType == "Rectangle")
+        {
+            newShape = new Rectangle(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
+        }
+        else if(shapeType == "Square")
+        {
+            newShape = new Square(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt());
+        }
+        else if(shapeType == "Ellipse")
+        {
+            newShape = new Ellipse(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                    splitDims[2].toInt(), splitDims[3].toInt());
+        }
+        else if(shapeType == "Circle")
+        {
+            newShape = new Circle(painter, pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                                                 splitDims[2].toInt());
+        }
+        else if(shapeType == "Text")
+        {
+            newShape = new Text(textString, textFontFamily, textPointSize, textColor, textAllignment,
+                                                textFontStyle, textFontWeight);
+        }
     }// END - while
 }// END - ReadInShape(void)

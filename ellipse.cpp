@@ -11,14 +11,12 @@ Ellipse::Ellipse() :Shape()
 
 //! Paramterized constructor with all variables.
 Ellipse::Ellipse(QPainter *painter, QPen pen, QBrush brush, int id, int x1, int y1, int a, int b)
+          :Shape(painter, pen, brush, id)
 {
     this->x1 = x1;
     this->y1 = y1;
     this->a = a;
     this->b = b;
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
-    this->id = id;
 }
 
 //! Default destructor.

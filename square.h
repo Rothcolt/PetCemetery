@@ -12,7 +12,7 @@ public:
 
     Square();                                   /*! Default constructor.      */
     Square(QPainter* painter, QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
-           int xc, int yc, int l);              /*! with all variables.       */
+           int x, int y, int length);              /*! with all variables.       */
     virtual ~Square();                          /*! Default destructor.       */
 
     virtual void drawShape();  /*! Draw the shape in the paint module. */

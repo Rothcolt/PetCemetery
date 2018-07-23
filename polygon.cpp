@@ -13,6 +13,7 @@ Polygon::Polygon() : Shape()
 
 //! Paramterized constructor with all variables.
 Polygon::Polygon(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+             :Shape(painter, pen, brush, id)
 {
     this->x1 = x1;
     this->x2 = x2;
@@ -20,9 +21,6 @@ Polygon::Polygon(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int 
     this->y1 = y1;
     this->y2 = y2;
     this->y3 = y3;
-    this->pen = QPen(pen);
-    this->brush = QBrush(brush);
-    this->id = id;
 }
 
 //! Default destructor.

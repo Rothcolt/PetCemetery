@@ -28,6 +28,16 @@ Text::~Text()
 
 }
 
+void Text::drawShape()
+{
+
+}
+
+void Text::moveShape()
+{
+
+}
+
 void Text::setText(QString text)
 {
     stringText = text;

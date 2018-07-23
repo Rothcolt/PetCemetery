@@ -14,6 +14,7 @@
 #include "circle.h"
 #include "square.h"
 #include "text.h"
+#include "renderarea.h"
 using namespace std;
 
 
