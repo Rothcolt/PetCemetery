@@ -25,6 +25,8 @@ class login : public QDialog
 
 public:
     explicit login(QWidget *parent = 0);
+    void changeState();
+    bool returnState();
     ~login();
 
 private slots:
@@ -32,6 +34,7 @@ private slots:
 
 private:
     Ui::login *ui;
+    bool running;
 };
 
 #endif // LOGIN_H

@@ -21,9 +21,10 @@ int main(int argc, char *argv[]) { // argc(argument count), argv(argument vector
     login loginScreen;                     // Creating new login screen
     loginScreen.show();                    // Shows login Screen
 
+
     // Display the canvas.
-    // Window window;
-    // window.show();
+    Window window;
+    window.show();
 
     return qApplication.exec();
 }
