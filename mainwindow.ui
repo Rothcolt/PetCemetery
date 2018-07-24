@@ -171,7 +171,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>6</number>
         </property>
         <widget class="QWidget" name="line_dim">
          <widget class="QWidget" name="formLayoutWidget_3">
@@ -183,7 +183,7 @@
             <height>71</height>
            </rect>
           </property>
-          <layout class="QGridLayout" name="gridLayout">
+          <layout class="QGridLayout" name="line_dim_grid">
            <item row="0" column="4">
             <widget class="QSpinBox" name="line_y1_value"/>
            </item>
@@ -250,7 +250,7 @@
             <height>83</height>
            </rect>
           </property>
-          <layout class="QGridLayout" name="gridLayout_2">
+          <layout class="QGridLayout" name="pLine_dim_grid">
            <item row="2" column="5">
             <widget class="QSpinBox" name="pLine_y3_value"/>
            </item>
@@ -338,7 +338,7 @@
             <height>71</height>
            </rect>
           </property>
-          <layout class="QGridLayout" name="gridLayout_4">
+          <layout class="QGridLayout" name="rect_dim_grid">
            <item row="0" column="4">
             <widget class="QSpinBox" name="rect_len_value"/>
            </item>
@@ -395,9 +395,187 @@
           </layout>
          </widget>
         </widget>
-        <widget class="QWidget" name="square_dim"/>
-        <widget class="QWidget" name="ellipse_dim"/>
-        <widget class="QWidget" name="circle_dim"/>
+        <widget class="QWidget" name="square_dim">
+         <widget class="QWidget" name="formLayoutWidget_6">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>321</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="square_dim_grid">
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="square_len_value"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="square_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="square_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="square_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="square_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="square_len_label">
+             <property name="text">
+              <string>length: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" rowspan="3">
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="ellipse_dim">
+         <widget class="QWidget" name="formLayoutWidget_7">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>321</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="ellipse_dim_grid">
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="ellipse_a_value"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="ellipse_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="ellipse_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="ellipse_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="ellipse_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="ellipse_a_label">
+             <property name="text">
+              <string>a: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="ellipse_b_label">
+             <property name="text">
+              <string>b: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QSpinBox" name="ellipse_b_value"/>
+           </item>
+           <item row="0" column="2" rowspan="3">
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="circle_dim">
+         <widget class="QWidget" name="formLayoutWidget_8">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>321</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="circle_dim_grid">
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="circle_r_value"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="circle_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="circle_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="circle_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="circle_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="circle_r_label">
+             <property name="text">
+              <string>r: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" rowspan="3">
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="pen_tab">
