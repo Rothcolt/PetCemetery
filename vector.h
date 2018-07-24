@@ -10,7 +10,7 @@ const int DFL_SIZE = 20;
 template<class Type>
 class Vector {
 
-/***************************************************************************************************/
+    /***************************************************************************************************/
 
 private:
 
@@ -18,34 +18,199 @@ private:
     Type* elem;                                 /* Element pointer.     */
     int space;                                  /* Size + free space.   */
 
-/***************************************************************************************************/
+    /***************************************************************************************************/
 
 public:
 
     /* Vector class for storing shape objects.
      * Calls upon shape.h for element type. */
 
-    Vector();                                   /* Default constructor.       */
-    explicit Vector(int s);                     /* Parameterized constructor. */
+    /** @brief Vector<Type>::Vector
+     * Generates a new vector object. */
+    Vector()
+    {
+        // Declare base elements.
+        elem = new Type[DFL_SIZE];
+        size_v = 0;
+        space = DFL_SIZE - size_v;
+    }
 
-    Vector(const Vector&);                      /* Copy constructor.          */
-    Vector(Vector&&);                           /* Move constructor.          */
-    Vector& operator=(const Vector& rhs);       /* Copy assignment operator.  */
-    Vector& operator=(Vector&& rhs);            /* Move assignment operator.  */
-    ~Vector();                                  /* Default denstructor.       */
+    /** @brief Vector<Type>::Vector
+     * Generates a new vector object, with parameters. */
+    explicit Vector(int s)
+    {
+        // Declare base elements.
+        elem = new Type[s];
+        size_v = 0;
+        space = s - size_v;
+    }
 
-    Type& operator[](int n);                    /* Accessor: Return reference.     */
-    const Type& operator[](int n) const;        /* Accessor: Return reference.     */
-    int size() const;                           /* Accessor: Return current size.  */
-    int capacity() const;                       /* Accessor: Return current space. */
+    /** @brief Vector<Type>::Vector
+     * Copy constructor for the vector class object.
+     *
+     * @param source Vector object to be copied. */
+    Vector(const Vector<Type>& source)
+        : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
 
-    void resize(int newsize);                   /* Mutator: Change the size of the vector. */
-    void push_back(Type new_elem);              /* Mutator: Add an element to the vector.  */
-    void reserve(int newalloc);                 /* Mutator: Allocate more space to vector. */
+        // Copy non-dynamic elements.
+        size_v = source.size_v;
+        space = source.space;
 
-/***************************************************************************************************/
+        // Copy all elements individually.
+        for (int i = 0; i < size_v; i++) {
+            elem[i] = source.elem[i];
+        }
+    }
 
-// These functions were unable to be defined outside the header file.
+    /** @brief Vector<Type>::Vector
+     * Move constructor for the vector class object.
+     *
+     * @param source Vector object to be copied. */
+    Vector(Vector<Type>&& source)
+        : size_v { source.size_v }, elem { source.elem }, space { source.space } {
+
+        // Release/reset source elements.
+        source.size_v = 0;
+        source.elem = NULL;
+        source.space = 0;
+    }
+
+    /** @brief Vector<Type>::operator=
+     * Copy assignment operator for the vector class object.
+     *
+     * @param rhs Vector object to the right of the operator.
+     * @return *this A pointer to the newly-modified object. */
+    Vector<Type>& operator=(const Vector& rhs) {
+
+        // Create temporary copy (copy constructor).
+        Vector temp(rhs);
+
+        // Copy static elements.
+        size_v = temp.size_v;
+        space = temp.space;
+
+        // Swap pointed-to data members.
+        elem = temp.elem;
+
+        // Release temporary vector.
+        delete[] temp.elem;
+        temp.size_v = 0;
+        temp.space = 0;
+
+        return *this;
+    }
+
+    /** @brief Vector<Type>::operator=
+     * Move assignment operator for the vector class object.
+     *
+     * @param rhs Vector object to the right of the operator.
+     * @return *this A pointer to the newly-modified object. */
+    Vector<Type>& operator=(Vector&& rhs) {
+
+        // LHS and RHS can't be equal.
+        if (this != rhs) {
+            delete[] elem;
+
+            // Assign members.
+            elem = rhs.elem;
+            size_v = rhs.size_v;
+            space = rhs.space;
+
+            // Release RHS.
+            rhs.size_v = 0;
+            rhs.space = 0;
+            delete[] rhs.elem;
+        }
+
+        return *this;
+    }
+
+    /** @brief Vector<Type>::operator=
+     * Default destructor for the vector class object. */
+    ~Vector() {
+
+        delete[] elem;
+    }
+
+    /** @brief Vector<type>::operator[]
+     * This method will return a reference to an indexed array element.
+     *
+     * @param n Index of the array element to be returned.
+     *
+     * @return *this->elem[n] Reference to indexed array element. */
+    Type& operator[](int n) {
+
+        return this->elem[n];
+    }
+
+    /** @brief Vector<type>::operator[]
+     * This method will return a value from an indexed array element.
+     *
+     * @param n Index of the array element to be returned.
+     *
+     * @return *this->elem[n] Value of indexed array element. */
+    const Type& operator[](int n) const {
+
+        return this->elem[n];
+    }
+
+    /** @brief Vector<type>::size
+     * This method will return the size of the vector array.
+     *
+     * @return size Array size. */
+    int size() const {
+
+        return size_v;
+    }
+
+    /** @brief Vector<type>::space
+     * This method will return the remaining space in the vector array.
+     *
+     * @return space Remaining space. */
+    int capacity() const {
+
+        return space;
+    }
+
+    /** @brief Vector<type>::newsize
+     * This method will modify the remaining space in the vector.
+     *
+     * @param newsize New vector size. */
+    void resize(int newsize)  {
+
+        size_v = newsize;
+    }
+
+    /** @brief Vector<type>::push_back
+     * This method will add a new element to the vector.
+     *
+     * @param new_elem Element to be added. */
+    void push_back(Type new_elem) {
+
+        // ERROR: No more room in vector.
+        if (space == 0) {
+
+        }
+
+        // Add new element to the array.
+        elem[size_v] = new_elem;
+        size_v++;
+        space--;
+    }
+
+    /** @brief Vector<type>::reserve
+     * This method will allocate space to the vector object.
+     *
+     * @param newalloc Space to be reserved. */
+    void reserve(int newalloc) {
+
+        // Increase space to "reserve" memory.
+        space = space + newalloc;
+    }
+
+    /***************************************************************************************************/
+
+    // These functions were unable to be defined outside the header file.
 
     // Iterator alisases.
     using v_iterator = Type*;                                /* Aliased iterator.       */
@@ -94,7 +259,7 @@ public:
         return *this;
     }
 
-/***************************************************************************************************/
+    /***************************************************************************************************/
 
 };
 
