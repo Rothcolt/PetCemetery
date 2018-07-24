@@ -35,31 +35,31 @@
       </property>
       <layout class="QFormLayout" name="formLayout">
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="username_line"/>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="username_label">
          <property name="text">
           <string>Username: </string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="password_line">
          <property name="echoMode">
           <enum>QLineEdit::Password</enum>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="password_label">
          <property name="text">
           <string>Password:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="login_button">
          <property name="text">
           <string>Log In</string>
          </property>
@@ -72,10 +72,10 @@
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>-1</x>
-        <y>29</y>
-        <width>801</width>
-        <height>571</height>
+        <x>20</x>
+        <y>30</y>
+        <width>761</width>
+        <height>381</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -83,6 +83,338 @@
         <widget class="RenderArea" name="canvas" native="true"/>
        </item>
       </layout>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>761</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="shape_tab">
+       <attribute name="title">
+        <string>Shape</string>
+       </attribute>
+       <widget class="QWidget" name="formLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>19</y>
+          <width>251</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="shape_select">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Shape: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="shape_dropdown">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Line</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PolyLine</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Polygon</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rectangle</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Square</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ellipse</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Circle</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QStackedWidget" name="shape_dimensions">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>10</y>
+          <width>361</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <widget class="QWidget" name="line_dim">
+         <widget class="QWidget" name="formLayoutWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>10</y>
+            <width>321</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="line_y1_value"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="line_x2_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="line_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="line_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="line_x2_label">
+             <property name="text">
+              <string>x2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="line_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="line_y2_label">
+             <property name="text">
+              <string>y2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QSpinBox" name="line_y2_value"/>
+           </item>
+           <item row="0" column="2" rowspan="3">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="polyline_dim">
+         <widget class="QWidget" name="formLayoutWidget_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>321</width>
+            <height>83</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="2" column="5">
+            <widget class="QSpinBox" name="pLine_y3_value"/>
+           </item>
+           <item row="0" column="5">
+            <widget class="QSpinBox" name="pLine_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="pLine_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="pLine_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="pLine_x2_label">
+             <property name="text">
+              <string>x2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="pLine_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLabel" name="pLine_y2_label">
+             <property name="text">
+              <string>y2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QSpinBox" name="pLine_y2_value"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="pLine_x2_value"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="pLine_x3_label">
+             <property name="text">
+              <string>x3:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLabel" name="pLine_y3_label">
+             <property name="text">
+              <string>y3:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="pLine_x3_value"/>
+           </item>
+           <item row="1" column="3">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="polygon_dim"/>
+        <widget class="QWidget" name="rectangle_dim">
+         <widget class="QWidget" name="formLayoutWidget_5">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>321</width>
+            <height>71</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="rect_len_value"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="rect_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="rect_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="rect_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="rect_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="rect_len_label">
+             <property name="text">
+              <string>length: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="rect_wid_label">
+             <property name="text">
+              <string>width: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QSpinBox" name="rect_wid_value"/>
+           </item>
+           <item row="0" column="2" rowspan="3">
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="square_dim"/>
+        <widget class="QWidget" name="ellipse_dim"/>
+        <widget class="QWidget" name="circle_dim"/>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pen_tab">
+       <attribute name="title">
+        <string>Pen</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="brush_tab">
+       <attribute name="title">
+        <string>Brush</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Text</string>
+       </attribute>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -93,7 +425,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
