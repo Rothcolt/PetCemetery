@@ -40,3 +40,6 @@ FORMS += \
     mainwindow.ui \
     mainwindow.ui
 
+DISTFILES += \
+    shape.txt
+
