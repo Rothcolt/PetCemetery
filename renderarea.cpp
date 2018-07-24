@@ -74,8 +74,8 @@ void RenderArea::setTransformed(bool transformed)
 // **IMPORTANT**
 // This function is called when you call update().
 // It is responsible for drawing your shapes on the canvas.
-void RenderArea::paintEvent(QPaintEvent * /* event */)
-{
-    this->parser.drawAll();
-}
+//void RenderArea::paintEvent(QPaintEvent * /* event */)
+//{
+//    this->parser.drawAll();
+//}
 //! [13]

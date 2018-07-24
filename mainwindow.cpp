@@ -7,7 +7,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +30,7 @@ void MainWindow::on_login_button_clicked()
     {
         // Set the current page to the Canvas page
         ui->stackedWidget->setCurrentIndex(CANVAS);
+//        ui->stackedWidget->show();
     }
     else
     {

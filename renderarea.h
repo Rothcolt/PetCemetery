@@ -29,7 +29,7 @@ public slots:
     void setTransformed(bool transformed);
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
+//    void paintEvent(QPaintEvent *event) override;
 
 private:
     Shape shape;
