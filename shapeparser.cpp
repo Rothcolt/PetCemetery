@@ -38,7 +38,7 @@ void ShapeParser::ReadInShape() {
     QFont::Weight textFontWeight;
     Shape *newShape;
 
-    QFile file("shapes.txt");
+    QFile file("shape.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
 
