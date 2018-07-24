@@ -14,11 +14,11 @@ HEADERS += \
     text.h \
     shapeparser.h \
     vector.h \
-    login.h \
     square.h \
     circle.h \
     window.h \
-    renderarea.h
+    renderarea.h \
+    mainwindow.h
 
 SOURCES += \
     line.cpp \
@@ -30,15 +30,13 @@ SOURCES += \
     text.cpp \
     shapeparser.cpp \
     main.cpp \
-    vector.cpp \
-    login.cpp \
     square.cpp \
     circle.cpp \
     window.cpp \
-    renderarea.cpp
+    renderarea.cpp \
+    mainwindow.cpp
 
 FORMS += \
-    login.ui \
     mainwindow.ui \
-    secdialog.ui
+    mainwindow.ui
 

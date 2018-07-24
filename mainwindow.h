@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "secdialog.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -16,11 +16,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_login_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    SecDialog *secDialog;
 };
 
 #endif // MAINWINDOW_H
