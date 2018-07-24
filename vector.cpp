@@ -189,7 +189,7 @@ int Vector<Type>::capacity() const {
 template<class Type>
 void Vector<Type>::resize(int newsize)  {
 
-    size = newsize;
+    size_v = newsize;
 
     return;
 }
