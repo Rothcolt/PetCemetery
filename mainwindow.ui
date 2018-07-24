@@ -89,12 +89,12 @@
        <rect>
         <x>20</x>
         <y>410</y>
-        <width>761</width>
+        <width>681</width>
         <height>161</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="shape_tab">
        <attribute name="title">
@@ -111,7 +111,7 @@
         </property>
         <layout class="QFormLayout" name="shape_select">
          <item row="0" column="0">
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="shape_label">
            <property name="text">
             <string>Shape: </string>
            </property>
@@ -164,8 +164,8 @@
        <widget class="QStackedWidget" name="shape_dimensions">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>10</y>
+          <x>290</x>
+          <y>20</y>
           <width>361</width>
           <height>101</height>
          </rect>
@@ -523,7 +523,7 @@
          <widget class="QWidget" name="formLayoutWidget_8">
           <property name="geometry">
            <rect>
-            <x>20</x>
+            <x>10</x>
             <y>10</y>
             <width>321</width>
             <height>71</height>
@@ -585,9 +585,9 @@
        <widget class="QWidget" name="gridLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>39</x>
-          <y>19</y>
-          <width>681</width>
+          <x>10</x>
+          <y>20</y>
+          <width>661</width>
           <height>91</height>
          </rect>
         </property>
@@ -787,7 +787,7 @@
        <widget class="QWidget" name="gridLayoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>20</x>
           <y>50</y>
           <width>631</width>
           <height>24</height>
@@ -931,7 +931,7 @@
        <widget class="QWidget" name="formLayoutWidget_9">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>10</x>
           <y>40</y>
           <width>661</width>
           <height>81</height>
@@ -1165,7 +1165,7 @@
        <widget class="QWidget" name="horizontalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>99</x>
+          <x>60</x>
           <y>10</y>
           <width>541</width>
           <height>31</height>
@@ -1186,6 +1186,19 @@
        </widget>
       </widget>
      </widget>
+     <widget class="QPushButton" name="add_shape_button">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>470</y>
+        <width>80</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Shape</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -1198,6 +1211,24 @@
      <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu2D_Graphic_Modeler">
+    <property name="title">
+     <string>2D Graphic Modeler</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuReports">
+    <property name="title">
+     <string>Reports</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuContact_us">
+    <property name="title">
+     <string>Contact us</string>
+    </property>
+   </widget>
+   <addaction name="menu2D_Graphic_Modeler"/>
+   <addaction name="menuReports"/>
+   <addaction name="menuContact_us"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
