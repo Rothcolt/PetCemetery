@@ -94,7 +94,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="shape_tab">
        <attribute name="title">
@@ -582,13 +582,349 @@
        <attribute name="title">
         <string>Pen</string>
        </attribute>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>39</x>
+          <y>19</y>
+          <width>681</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="pen_grid">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <item row="2" column="0">
+          <widget class="QLabel" name="pen_style_label">
+           <property name="text">
+            <string>Pen Style: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="pen_join_label">
+           <property name="text">
+            <string>Pen Join: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="pen_width_label">
+           <property name="text">
+            <string>Pen Width: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="pen_color_label">
+           <property name="text">
+            <string>Pen Color: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="pen_cap_label">
+           <property name="text">
+            <string>Pen Cap: </string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="pen_color">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>White</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Black</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Red</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Green</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Cyan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Magenta</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Yellow</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gray</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="pen_width">
+           <property name="maximum">
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="pen_style">
+           <item>
+            <property name="text">
+             <string>No Pen</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Solid Line</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dash Line</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dot Line</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dash Dot Line</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dash Dot Dot Line</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QComboBox" name="pen_join">
+           <item>
+            <property name="text">
+             <string>Miter Join</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bevel Join</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Round Join</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QComboBox" name="pen_cap">
+           <item>
+            <property name="text">
+             <string>Flat Cap</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Square Cap</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Round Cap</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="brush_tab">
        <attribute name="title">
         <string>Brush</string>
        </attribute>
+       <widget class="QWidget" name="gridLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>50</y>
+          <width>631</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <item>
+          <widget class="QLabel" name="brush_style_label">
+           <property name="text">
+            <string>Brush Style:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="brush_style">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <item>
+            <property name="text">
+             <string>Solid Pattern</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Horizontal Pattern</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical Pattern</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>No Brush</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="brush_color_label">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Brush Color:</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="indent">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="brush_color">
+           <item>
+            <property name="text">
+             <string>White</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Black</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Red</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Green</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blue</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Cyan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Magenta</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Yellow</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gray</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
-      <widget class="QWidget" name="tab_6">
+      <widget class="QWidget" name="text_tab">
        <attribute name="title">
         <string>Text</string>
        </attribute>
