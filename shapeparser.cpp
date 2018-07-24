@@ -1,9 +1,18 @@
 #include "shapeparser.h"
 
-//! Default constructor.
-ShapeParser::ShapeParser() {
-
+ShapeParser::ShapeParser()
+{
+    this->shapes = new Vector<Shape*>();
 }
+
+//! Default constructor.
+ShapeParser::ShapeParser(QPainter *painter)
+{
+    this->painter = painter;
+    this->shapes = new Vector<Shape*>();
+}
+
+ShapeParser::~ShapeParser() {}
 
 //! Read in shapes from a file.
 void ShapeParser::ReadInShape() {
@@ -32,7 +41,7 @@ void ShapeParser::ReadInShape() {
     QFile file("shapes.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        return;
+
     }
 
     QTextStream in(&file);
@@ -340,7 +349,6 @@ void ShapeParser::ReadInShape() {
         QBrush brush(brushColor, brushStyle);
         QPen pen(brush, penWidth, penStyle, capStyle, joinStyle);
         pen.setColor(penColor);
-        QPainter* painter;
         painter->setBrush(brush);
         painter->setPen(pen);
 
@@ -392,5 +400,16 @@ void ShapeParser::ReadInShape() {
             newShape = new Text(textString, textFontFamily, textPointSize, textColor, textAllignment,
                                                 textFontStyle, textFontWeight);
         }
+
+        this->shapes->push_back(newShape);
     }// END - while
+}
+
+void ShapeParser::drawAll()
+{
+    Shape** it = this->shapes->begin();
+    while(it != this->shapes->end()){
+        (*it)->drawShape();
+        it++;
+    }
 }// END - ReadInShape(void)

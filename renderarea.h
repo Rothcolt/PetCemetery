@@ -5,6 +5,7 @@
 #include <QPen>
 #include <QPixmap>
 #include <QWidget>
+#include "shapeparser.h"
 
 //! [0]
 class RenderArea : public QWidget
@@ -37,6 +38,7 @@ private:
     bool antialiased;
     bool transformed;
     QPixmap pixmap;
+    ShapeParser parser;
 };
 //! [0]
 

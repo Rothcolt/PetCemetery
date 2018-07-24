@@ -14,7 +14,7 @@
 #include "circle.h"
 #include "square.h"
 #include "text.h"
-#include "renderarea.h"
+#include "vector.h"
 using namespace std;
 
 
@@ -23,14 +23,15 @@ class ShapeParser {
 public:
 
     //! Parser for reading in shapes.
-
-    ShapeParser();              /*! Default constructor.        */
+    ShapeParser();
+    ShapeParser(QPainter *painter);              /*! Default constructor.        */
     ~ShapeParser();             /*! Default destructor.         */
     void ReadInShape();         /*! Read in shapes from a file. */
+    void drawAll();
 
 private:
-
-//    QVector shapeList;
+    QPainter *painter;
+    Vector<Shape*> *shapes;
 
 };
 
