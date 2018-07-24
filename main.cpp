@@ -5,26 +5,23 @@
 #include "polygon.h"
 #include "polyline.h"
 #include "shapeparser.h"
-#include "login.h"
 #include <QApplication>
 #include "text.h"
 #include "window.h"
+#include "mainwindow.h"
 
 /*! Main function file for the Qt painter project.
  * Calls upon all files to execute primary functinality */
 
 //! Primary functionality.
-int main(int argc, char *argv[]) { // argc(argument count), argv(argument vector) this will pass
-                                   // the command line arguments to main()
+int main(int argc, char *argv[]) {
 
-    QApplication qApplication(argc, argv); // Need QApplication to show login screen
-    login loginScreen;                     // Creating new login screen
-    loginScreen.show();                    // Shows login Screen
+    // Initialize QApp (the entire application itself)
+    QApplication qApplication(argc, argv);
 
-
-    // Display the canvas.
-    Window window;
-    window.show();
+    // Initialize and show MainWindow
+    MainWindow mainWindow;
+    mainWindow.show();
 
     return qApplication.exec();
 }
