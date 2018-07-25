@@ -16,7 +16,6 @@ HEADERS += \
     vector.h \
     square.h \
     circle.h \
-    window.h \
     renderarea.h \
     mainwindow.h
 
@@ -32,7 +31,6 @@ SOURCES += \
     main.cpp \
     square.cpp \
     circle.cpp \
-    window.cpp \
     renderarea.cpp \
     mainwindow.cpp
 
