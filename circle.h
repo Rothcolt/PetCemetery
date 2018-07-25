@@ -10,8 +10,7 @@ public:
     /*! Circle object, with position and radius variables.
      * Able to be drawn and moved. */
 
-    Circle();                                   /*! Default constructor.      */
-    Circle(QPainter *painter, QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
+    Circle(QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
            int x, int y, int radius);              /*! with all variables.       */
     virtual ~Circle();                          /*! Default destructor.       */
 

@@ -23,6 +23,9 @@
       <height>601</height>
      </rect>
     </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
     <widget class="QWidget" name="login">
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
@@ -100,7 +103,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="shape_tab">
        <attribute name="title">
@@ -130,6 +133,9 @@
           <widget class="QComboBox" name="shape_dropdown">
            <property name="editable">
             <bool>false</bool>
+           </property>
+           <property name="currentIndex">
+            <number>6</number>
            </property>
            <item>
             <property name="text">
@@ -256,7 +262,7 @@
             <x>0</x>
             <y>20</y>
             <width>321</width>
-            <height>83</height>
+            <height>89</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="pLine_dim_grid">
@@ -823,7 +829,7 @@
           <x>20</x>
           <y>50</y>
           <width>631</width>
-          <height>24</height>
+          <height>26</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
@@ -973,7 +979,7 @@
           <x>10</x>
           <y>40</y>
           <width>661</width>
-          <height>81</height>
+          <height>87</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="text_grid">
@@ -1268,13 +1274,14 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu2D_Graphic_Modeler">
     <property name="title">
      <string>2D Graphic Modeler</string>
     </property>
+    <addaction name="actionImport"/>
    </widget>
    <widget class="QMenu" name="menuReports">
     <property name="title">
@@ -1291,6 +1298,11 @@
    <addaction name="menuContact_us"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

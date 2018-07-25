@@ -1,17 +1,8 @@
 #include "rectangle.h"
 
-//! Default constructor.
-Rectangle::Rectangle() : Shape()
-{
-    this->x1 = 0;
-    this->y1 = 0;
-    length = 0;
-    width  = 0;
-}
-
 //! Paramterized constructor with all variables.
-Rectangle::Rectangle(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
-               :Shape(painter, pen, brush, id)
+Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
+               :Shape(pen, brush, id)
 {
    this->x1 = x1;
    this->y1 = y1;
@@ -28,7 +19,7 @@ Rectangle::~Rectangle()
 //! Draw the shape in the paint module.
 void Rectangle::drawShape()
 {
-    painter->drawRect(x1, y1, width, length);
+    painter.drawRect(x1, y1, width, length);
 }
 
 //! Change coordinates and move shape.

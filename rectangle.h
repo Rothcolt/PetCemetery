@@ -10,8 +10,7 @@ public:
     /*! Rectangle object, with position, length, and width variables.
      * Able to be drawn and moved. */
 
-    Rectangle();                                    /*! Default constructor.      */
-    Rectangle(QPainter* painter, QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
+    Rectangle(QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
               int x1, int y1, int w, int l);        /*! with all variables.       */
     virtual ~Rectangle();                           /*! Default destructor.       */
 

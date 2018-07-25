@@ -1,17 +1,8 @@
 #include "circle.h"
 
-//! Default constructor.
-Circle::Circle() : Shape()
-{
-    x = 0;
-    y = 0;
-    radius = 0;
-}
-
-
 //! Paramterized constructor with all variables.
-Circle::Circle(QPainter *painter, QPen pen, QBrush brush, int id, int x, int y, int radius)
-         :Shape(painter, pen, brush, id)
+Circle::Circle(QPen pen, QBrush brush, int id, int x, int y, int radius)
+         :Shape(pen, brush, id)
 {
     // Circle variables.
     this->x = x;
@@ -29,7 +20,7 @@ Circle::~Circle()
 void Circle::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function.
-//     painter->drawPolygon(this, Qt::OddEvenFill);
+//     painter.drawPolygon(this, Qt::OddEvenFill);
 }
 
 //! Change coordinates and move shape.

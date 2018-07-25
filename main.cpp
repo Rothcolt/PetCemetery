@@ -7,7 +7,6 @@
 #include "shapeparser.h"
 #include <QApplication>
 #include "text.h"
-#include "window.h"
 #include "mainwindow.h"
 
 /*! Main function file for the Qt painter project.

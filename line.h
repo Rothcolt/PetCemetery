@@ -10,8 +10,7 @@ public:
     /*! Line object, with endpoint variables.
      * Able to be drawn and moved. */
 
-    Line();                                     /*! Default constructor.      */
-    Line(QPainter* painter, QPen pen, QBrush brush, int id,        /*! Paramterized constructor  */
+    Line(QPen pen, QBrush brush, int id,        /*! Paramterized constructor  */
          int x1, int y1, int x2, int y2);       /*! with all variables.       */
     virtual ~Line();                            /*! Default destructor.       */
 

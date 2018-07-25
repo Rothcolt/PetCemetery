@@ -10,8 +10,7 @@ public:
     /*! Polygon object, with corner variables.
      * Able to be drawn and moved. */
 
-    Polygon();                                          /*! Default constructor.      */
-    Polygon(QPainter* painter, QPen pen, QBrush brush, int id, int x1,     /*! Paramterized constructor  */
+    Polygon(QPen pen, QBrush brush, int id, int x1,     /*! Paramterized constructor  */
             int y1, int x2, int y2, int x3, int y3);    /*! with all variables.       */
     virtual ~Polygon();                                 /*! Default destructor.       */
 

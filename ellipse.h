@@ -10,8 +10,7 @@ public:
     /*! Ellipse object, with position and axis variables.
      * Able to be drawn and moved. */
 
-    Ellipse();                                  /*! Default constructor.      */
-    Ellipse(QPainter* painter, QPen pen, QBrush brush, int id,     /*! Paramterized constructor  */
+    Ellipse(QPen pen, QBrush brush, int id,     /*! Paramterized constructor  */
             int x1, int y1, int a, int b);      /*! with all variables.       */
     virtual ~Ellipse();                         /*! Default destructor.       */
 

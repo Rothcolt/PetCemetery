@@ -1,16 +1,8 @@
 #include "square.h"
 
-//! Default constructor.
-Square::Square() : Shape()
-{
-    x = 0;
-    y = 0;
-    length = 0;
-}
-
 //! Paramterized constructor with all variables.
-Square::Square(QPainter* painter, QPen pen, QBrush brush, int id, int x, int y, int length)
-           :Shape(painter, pen, brush, id)
+Square::Square(QPen pen, QBrush brush, int id, int x, int y, int length)
+           :Shape(pen, brush, id)
 {
     // Square variables.
     this->x = x;
@@ -28,7 +20,7 @@ Square::~Square()
 void Square::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function.
-    // painter->drawPolygon(this, Qt::OddEvenFill);
+    // painter.drawPolygon(this, Qt::OddEvenFill);
 }
 
 //! Change coordinates and move shape.

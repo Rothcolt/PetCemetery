@@ -10,8 +10,7 @@ public:
     /*! Polyline object, with point variables.
      * Able to be drawn and moved. */
 
-    Polyline();                                             /*! Default constructor.      */
-    Polyline(QPainter *painter, QPen pen, QBrush brush, int id, int x1,        /*! Paramterized constructor  */
+    Polyline(QPen pen, QBrush brush, int id, int x1,        /*! Paramterized constructor  */
              int y1, int x2, int y2, int x3, int y3);       /*! with all variables.       */
     virtual ~Polyline();                                    /*! Default destructor.       */
 

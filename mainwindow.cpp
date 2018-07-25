@@ -1,12 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QFileDialog>
+
+// Used for keeping track of page indices
+enum Pages {
+    LOGIN,
+    CANVAS
+};
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->parser = new ShapeParser();
+    ui->stackedWidget->setCurrentIndex(LOGIN);
 }
 
 MainWindow::~MainWindow()
@@ -16,12 +25,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_login_button_clicked()
 {
-    // Used for keeping track of page indices
-    enum Pages {
-        LOGIN,
-        CANVAS
-    };
-
    QString username = ui->username_line->text(); // User entered username
    QString password = ui->password_line->text(); // User entered password
 
@@ -31,6 +34,8 @@ void MainWindow::on_login_button_clicked()
         // Set the current page to the Canvas page
         ui->stackedWidget->setCurrentIndex(CANVAS);
 //        ui->stackedWidget->show();
+
+
     }
     else
     {
@@ -40,5 +45,15 @@ void MainWindow::on_login_button_clicked()
         loginError.critical(ui->stackedWidget, "Error", "Please enter a valid username/password");
         loginError.setFixedSize(500, 200);
     } // END - if else
+
+}
+
+//need function to read in shapes
+// calls shape parser
+
+void MainWindow::on_actionImport_triggered()
+{
+    QString importFile = QFileDialog::getOpenFileName();
+    ui->canvas->setShapes(this->parser->ReadInShape(importFile));
 
 }

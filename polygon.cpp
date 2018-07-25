@@ -1,19 +1,8 @@
 #include "polygon.h"
 
-//! Default constructor.
-Polygon::Polygon() : Shape()
-{
-    x1 = 0;
-    x2 = 0;
-    x3 = 0;
-    y1 = 0;
-    y2 = 0;
-    y3 = 0;
-}
-
 //! Paramterized constructor with all variables.
-Polygon::Polygon(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
-             :Shape(painter, pen, brush, id)
+Polygon::Polygon(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+             :Shape(pen, brush, id)
 {
     this->x1 = x1;
     this->x2 = x2;
@@ -30,7 +19,7 @@ Polygon::~Polygon() {}
 void Polygon::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function.
-    // painter->drawPolygon(this, Qt::OddEvenFill);
+    // painter.drawPolygon(this, Qt::OddEvenFill);
 }
 
 //! Change coordinates and move shape.

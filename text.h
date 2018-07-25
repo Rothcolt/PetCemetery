@@ -7,7 +7,6 @@ class Text : public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
-    Text();
     Text(QString text, QString fontFamily, int pointSize, Qt::GlobalColor color,
          Qt::AlignmentFlag align, QFont::Style fontStyle, QFont::Weight fontWeight);
     // **** DESTRUCTOR ***************** //

@@ -1,5 +1,14 @@
 #include "renderarea.h"
-
+#include "shape.h"
+#include "line.h"
+#include "polyline.h"
+#include "polygon.h"
+#include "rectangle.h"
+#include "square.h"
+#include "ellipse.h"
+#include "circle.h"
+#include "text.h"
+#include <QDebug>
 #include <QPainter>
 
 //! [0]
@@ -9,11 +18,7 @@ RenderArea::RenderArea(QWidget *parent)
     // Fill canvas background with base color (white)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-
-    QPainter *painter = new QPainter(this);
-
-    this->parser = ShapeParser(painter);
-    this->parser.ReadInShape();
+    this->shapes = new Vector<Shape*>();
 }
 //! [0]
 
@@ -31,51 +36,40 @@ QSize RenderArea::sizeHint() const
 }
 //! [2]
 
-//! [3]
-void RenderArea::setShape(Shape shape)
+void RenderArea::setShapes(Vector<Shape *> *shapes)
 {
-    this->shape = shape;
+    this->shapes = shapes;
     update();
 }
-//! [3]
-
-//! [4]
-void RenderArea::setPen(const QPen &pen)
-{
-    this->pen = pen;
-    update();
-}
-//! [4]
-
-//! [5]
-void RenderArea::setBrush(const QBrush &brush)
-{
-    this->brush = brush;
-    update();
-}
-//! [5]
-
-//! [6]
-void RenderArea::setAntialiased(bool antialiased)
-{
-    this->antialiased = antialiased;
-    update();
-}
-//! [6]
-
-//! [7]
-void RenderArea::setTransformed(bool transformed)
-{
-    this->transformed = transformed;
-    update();
-}
-//! [7]
 
 // **IMPORTANT**
 // This function is called when you call update().
 // It is responsible for drawing your shapes on the canvas.
-//void RenderArea::paintEvent(QPaintEvent * /* event */)
-//{
-//    this->parser.drawAll();
-//}
+void RenderArea::paintEvent(QPaintEvent * /* event */)
+{
+    // class for the canvas
+    // only call update wheb you wanna redraw the canvas
+    // paint event will call draw function for all shapes
+
+    if(shapes->size() > 0)
+    {
+        for(Vector<Shape*>::v_iterator it = shapes->begin(); it != shapes->end(); ++it)
+        {
+            if(!(*it)->getPainter().isActive())
+            {
+                (*it)->getPainter().begin(this);
+                (*it)->getPainter().setPen((*it)->getPen());
+                (*it)->getPainter().setBrush((*it)->getBrush());
+                (*it)->getPainter().setRenderHint(QPainter::Antialiasing, true);
+                (*it)->getPainter().save();
+                (*it)->drawShape();
+                (*it)->getPainter().restore();
+                (*it)->getPainter().end();
+            }
+        }
+    }
+
+}
+
+
 //! [13]

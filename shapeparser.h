@@ -15,6 +15,7 @@
 #include "square.h"
 #include "text.h"
 #include "vector.h"
+#include "renderarea.h"
 using namespace std;
 
 
@@ -24,14 +25,8 @@ public:
 
     //! Parser for reading in shapes.
     ShapeParser();
-    ShapeParser(QPainter *painter);              /*! Default constructor.        */
     ~ShapeParser();             /*! Default destructor.         */
-    void ReadInShape();         /*! Read in shapes from a file. */
-    void drawAll();
-
-private:
-    QPainter *painter;
-    Vector<Shape*> *shapes;
+    Vector<Shape*> *ReadInShape(QString filePath);         /*! Read in shapes from a file. */
 
 };
 

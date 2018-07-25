@@ -1,21 +1,8 @@
 #include "polyline.h"
 
-
-//! Default constructor.
-Polyline::Polyline() : Shape()
-{
-    this->x1 = 0;
-    this->x2 = 0;
-    this->x3 = 0;
-    this->y1 = 0;
-    this->y2 = 0;
-    this->y3 = 0;
-}
-
-
 //! Paramterized constructor with all variables.
-Polyline::Polyline(QPainter *painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
-            :Shape(painter, pen, brush, id)
+Polyline::Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
+            :Shape(pen, brush, id)
 {
     // Polyline variables.
     this->x1 = x1;
@@ -36,7 +23,7 @@ Polyline::~Polyline()
 void Polyline::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function
-    // painter->drawPolyline();
+    // painter.drawPolyline();
 }
 
 //! Change coordinates and move shape.

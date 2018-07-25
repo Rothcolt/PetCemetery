@@ -1,17 +1,8 @@
 #include "line.h"
 
-//! Derived from abstract base class Shape.
-Line::Line() : Shape()
-{
-    this->x1 = 0;
-    this->y1 = 0;
-    this->x2 = 0;
-    this->y2 = 0;
-}
-
 //! Paramterized constructor with all variables.
-Line::Line(QPainter* painter, QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2)
-       :Shape(painter, pen, brush, id)
+Line::Line(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2)
+       :Shape(pen, brush, id)
 {
     this->x1 = x1;
     this->y1 = y1;
@@ -28,7 +19,7 @@ Line::~Line()
 //! Draw the shape in the paint module.
 void Line::drawShape()
 {
-    painter->drawLine(x1, y1, x2, y2);
+    painter.drawLine(x1, y1, x2, y2);
 }
 
 //! Change coordinates and move shape.
