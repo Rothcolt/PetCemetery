@@ -33,6 +33,11 @@ public:
         elem = new Type[DFL_SIZE];
         size_v = 0;
         space = DFL_SIZE - size_v;
+
+        for(int i = 0; i < DFL_SIZE; i++)
+        {
+            elem[i] = Type();
+        }
     }
 
     /** @brief Vector<Type>::Vector
@@ -43,6 +48,11 @@ public:
         elem = new Type[s];
         size_v = 0;
         space = s - size_v;
+
+        for(int i =0; i < DFL_SIZE; i++)
+        {
+            elem[i] = Type();
+        }
     }
 
     /** @brief Vector<Type>::Vector
@@ -50,14 +60,15 @@ public:
      *
      * @param source Vector object to be copied. */
     Vector(const Vector<Type>& source)
-        : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space } {
-
+        : size_v { source.size_v }, elem { new Type[source.size_v] }, space { source.space }
+    {
         // Copy non-dynamic elements.
         size_v = source.size_v;
         space = source.space;
 
         // Copy all elements individually.
-        for (int i = 0; i < size_v; i++) {
+        for (int i = 0; i < size_v; i++)
+        {
             elem[i] = source.elem[i];
         }
     }
@@ -82,20 +93,34 @@ public:
      * @return *this A pointer to the newly-modified object. */
     Vector<Type>& operator=(const Vector& rhs) {
 
-        // Create temporary copy (copy constructor).
-        Vector temp(rhs);
+//        // Create temporary copy (copy constructor).
+//        Vector temp(rhs);
 
-        // Copy static elements.
-        size_v = temp.size_v;
-        space = temp.space;
+//        // Copy static elements.
+//        size_v = temp.size_v;
+//        space = temp.space;
 
-        // Swap pointed-to data members.
-        elem = temp.elem;
+//        // Swap pointed-to data members.
+//        elem = temp.elem;
 
-        // Release temporary vector.
-        delete[] temp.elem;
-        temp.size_v = 0;
-        temp.space = 0;
+//        // Release temporary vector.
+//        delete[] temp.elem;
+//        temp.size_v = 0;
+//        temp.space = 0;
+
+        if(elem != NULL)
+        {
+            delete[] elem;
+        }
+
+        elem = new Type[DFL_SIZE];
+        space = rhs.space;
+        size_v = rhs.size_v;
+
+        for(int i = 0; i < DFL_SIZE; i++)
+        {
+            elem[i] = rhs.elem[i];
+        }
 
         return *this;
     }
@@ -107,20 +132,25 @@ public:
      * @return *this A pointer to the newly-modified object. */
     Vector<Type>& operator=(Vector&& rhs) {
 
-        // LHS and RHS can't be equal.
+/*        // LHS and RHS can't be equal.
         if (this != rhs) {
+            delete[] elem*/;
+
+        if(elem != NULL)
+        {
             delete[] elem;
-
-            // Assign members.
-            elem = rhs.elem;
-            size_v = rhs.size_v;
-            space = rhs.space;
-
-            // Release RHS.
-            rhs.size_v = 0;
-            rhs.space = 0;
-            delete[] rhs.elem;
         }
+
+                    // Assign members.
+                    elem = rhs.elem;
+                    size_v = rhs.size_v;
+                    space = rhs.space;
+
+                    // Release RHS.
+                    rhs.elem = nullptr;
+                    rhs.size_v = 0;
+                    rhs.space = 0;
+//                    delete[] rhs.elem;
 
         return *this;
     }
@@ -129,7 +159,11 @@ public:
      * Default destructor for the vector class object. */
     ~Vector() {
 
-        delete[] elem;
+        if(elem != nullptr)
+        {
+            delete[] elem;
+            elem = nullptr;
+        }
     }
 
     /** @brief Vector<type>::operator[]
@@ -140,7 +174,8 @@ public:
      * @return *this->elem[n] Reference to indexed array element. */
     Type& operator[](int n) {
 
-        return this->elem[n];
+        assert(n < size_v);
+        return elem[n];
     }
 
     /** @brief Vector<type>::operator[]
@@ -151,7 +186,8 @@ public:
      * @return *this->elem[n] Value of indexed array element. */
     const Type& operator[](int n) const {
 
-        return this->elem[n];
+         assert(n < size_v);
+        return elem[n];
     }
 
     /** @brief Vector<type>::size
@@ -176,36 +212,81 @@ public:
      * This method will modify the remaining space in the vector.
      *
      * @param newsize New vector size. */
-    void resize(int newsize)  {
+    void resize(int newSize)  {
 
-        size_v = newsize;
+//        size_v = newsize;
+        Type* temp = elem;
+        elem = new Type[newSize];
+        space = newSize;
+
+        if(newSize > size_v)
+        {
+            size_v = newSize;
+        }
+
+        for(int i  = 0; i < space; i++)
+        {
+            elem[i] = temp[i];
+        }
+
+        delete[] temp;
     }
 
     /** @brief Vector<type>::push_back
      * This method will add a new element to the vector.
      *
      * @param new_elem Element to be added. */
-    void push_back(Type new_elem) {
+    void push_back(Type& new_elem) {
 
-        // ERROR: No more room in vector.
-        if (space == 0) {
+//        // ERROR: No more room in vector.
+//        if (space == 0) {
 
+//        }
+
+//        // Add new element to the array.
+//        elem[size_v] = new_elem;
+//        size_v++;
+//        space--;
+
+        if(size_v + 1 > space)
+        {
+            Type* temp = elem;
+            elem = new Type[space * 2];
+
+            for(int i = 0; i < space; i++)
+            {
+                elem[i] = temp[i];
+            }
+
+            delete[] temp;
+
+            space *= 2;
         }
 
-        // Add new element to the array.
         elem[size_v] = new_elem;
         size_v++;
-        space--;
     }
 
     /** @brief Vector<type>::reserve
      * This method will allocate space to the vector object.
      *
      * @param newalloc Space to be reserved. */
-    void reserve(int newalloc) {
+    void reserve(int size) {
 
-        // Increase space to "reserve" memory.
-        space = space + newalloc;
+//        // Increase space to "reserve" memory.
+//        space = space + newalloc;
+        if(size > space)
+        {
+            Type* temp = elem;
+            elem = new Type[size_v];
+
+            for(int i = 0; i < space; i++)
+            {
+                elem[i] = temp[i];
+            }
+
+            delete[] temp;
+        }
     }
 
     /***************************************************************************************************/
@@ -219,27 +300,41 @@ public:
     /** @brief Vector<type>::begin
      * This method will point to the first vector value.
      * @return &elem[0] Reference to beginning array element. */
-    v_iterator begin() { return &elem[0]; }
+    v_iterator begin()
+    {
+        return &elem[0];
+    }
 
     /** @brief Vector<type>::begin
      * This method will point to the first vector value.
      * @return &elem[0] Reference to beginning array element. */
-    const_iterator begin() const { return &elem[0]; }
+    const_iterator begin() const
+    {
+        return &elem[0];
+    }
 
     /** @brief Vector<type>::end
      * This method will point to one after the last vector value.
      * @return &elem[size_v + 1] Reference to postfinal array element. */
-    v_iterator end() { return &elem[size_v + 1]; }
+    v_iterator end()
+    {
+        return &elem[size_v];
+    }
 
     /** @brief Vector<type>::end
      * This method will point to one after the last vector value.
      * @return &elem[size_v + 1] Reference to postfinal array element. */
-    const_iterator end() const { return &elem[size_v + 1]; }
+    const_iterator end() const
+    {
+        return &elem[size_v];
+    }
 
     /** @brief Vector<type>::end
      * This method will insert new element v before p.
      * @return *this Reference to vector. */
-    v_iterator insert(v_iterator p, const Type& v) {
+    v_iterator insert(v_iterator p, const Type& v)
+    {
+
 
         // Add new element to the array.
         p - 1 = v;
@@ -251,8 +346,8 @@ public:
      * This method will remove element pointed to by p.
      * @param p Pointer to vector element.
      * @return *this Reference to vector. */
-    v_iterator erase(v_iterator p) {
-
+    v_iterator erase(v_iterator p)
+    {
         // Release memory at p.
         delete p;
 
