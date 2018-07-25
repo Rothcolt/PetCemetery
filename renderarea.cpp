@@ -16,25 +16,26 @@ RenderArea::RenderArea(QWidget *parent)
     : QWidget(parent)
 {
     // Fill canvas background with base color (white)
+    setMinimumSize(1000, 500);
+    setMaximumSize(1000, 500);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     this->shapes = new Vector<Shape*>();
 }
-//! [0]
 
-//! [1]
-QSize RenderArea::minimumSizeHint() const
-{
-    return QSize(100, 100);
-}
-//! [1]
+////! [1]
+//QSize RenderArea::minimumSizeHint() const
+//{
+//    return QSize(100, 100);
+//}
+////! [1]
 
-//! [2]
-QSize RenderArea::sizeHint() const
-{
-    return QSize(400, 200);
-}
-//! [2]
+////! [2]
+//QSize RenderArea::sizeHint() const
+//{
+//    return QSize(400, 200);
+//}
+////! [2]
 
 void RenderArea::setShapes(Vector<Shape *> *shapes)
 {
@@ -65,9 +66,14 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
                 (*it)->drawShape();
                 (*it)->getPainter().restore();
                 (*it)->getPainter().end();
-            }
-        }
-    }
+            } // END - if
+        } // END - for
+    } // END -if
+
+//    QPainter localPainter(this);
+//    localPainter.setPen(palette().dark().color());
+//    localPainter.setBrush(Qt::NoBrush);
+//    localPainter.drawRect(QRect(0, 0, width() - 1, height() - 1));
 
 }
 

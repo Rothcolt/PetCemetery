@@ -19,7 +19,7 @@ Circle::~Circle()
 //! Draw the shape in the paint module.
 void Circle::drawShape()
 {
-    // Uses pointer to access and invoke QPainter object drawPolygone function.
+//     Uses pointer to access and invoke QPainter object drawPolygone function.
 //     painter.drawPolygon(this, Qt::OddEvenFill);
 }
 

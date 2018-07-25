@@ -15,9 +15,8 @@ class RenderArea : public QWidget
 public:
 
     RenderArea(QWidget *parent = 0);
-
-    QSize minimumSizeHint() const override;
-    QSize sizeHint() const override;
+//    QSize minimumSizeHint() const override;
+//    QSize sizeHint() const override;
     void setShapes(Vector<Shape*> *shapes);
 
 public slots:

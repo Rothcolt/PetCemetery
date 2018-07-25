@@ -19,7 +19,13 @@ Line::~Line()
 //! Draw the shape in the paint module.
 void Line::drawShape()
 {
-    painter.drawLine(x1, y1, x2, y2);
+    QPoint point1 = {x1, y1};
+    QPoint point2 = {x2, y2};
+
+    painter.setPen(pen);
+    painter.setBrush(brush);
+//    painter.drawLine(x1, y1, x2, y2);
+    painter.drawLine(point1, point2);
 }
 
 //! Change coordinates and move shape.
