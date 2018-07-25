@@ -1,15 +1,15 @@
 #include "text.h"
 
-Text::Text(QString text, QString fontFamily, int pointSize, Qt::GlobalColor color,
-           Qt::AlignmentFlag align, QFont::Style fontStyle, QFont::Weight fontWeight):Shape(QPen(), QBrush(), -1)
+Text::Text(QPen pen, QBrush brush, int id, QFont font, QString text, Qt::AlignmentFlag textAlignment,
+                QPoint point, int width, int height)
+      : Shape(pen, brush, id)
 {
     stringText = text;
-    textFontFamily = fontFamily;
-    textPointSize = pointSize;
-    textColor = color;
-    textAlignment = align;
-    textFontStyle = fontStyle;
-    textFontWeight = fontWeight;
+    this->font = font;
+    this->textAlignment = textAlignment;
+    this->point = point;
+    this->width = width;
+    this->height = height;
 }
 
 Text::~Text()
@@ -19,7 +19,12 @@ Text::~Text()
 
 void Text::drawShape()
 {
+    painter.setPen(pen);
+    painter.setFont(font);
+    painter.drawText(point.x(), point.y(), width, height, textAlignment, stringText);
 
+    painter.setFont(QFont());
+    painter.drawText(point.x(), point.y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 void Text::moveShape()
@@ -32,15 +37,6 @@ void Text::setText(QString text)
     stringText = text;
 }
 
-void Text::setFontFamily(QString fontFamily)
-{
-    fontFamily = textFontFamily;
-}
-
-void Text::setPointSize(int pointSize)
-{
-    textPointSize = pointSize;
-}
 
 void Text::setColor(Qt::GlobalColor color)
 {
@@ -50,14 +46,4 @@ void Text::setColor(Qt::GlobalColor color)
 void Text::setAlignment(Qt::AlignmentFlag align)
 {
     textAlignment = align;
-}
-
-void Text::setFontStyle(QFont::Style fontStyle)
-{
-    textFontStyle = fontStyle;
-}
-
-void Text::setFontWeight(QFont::Weight weight)
-{
-    textFontWeight = weight;
 }

@@ -20,6 +20,7 @@ Rectangle::~Rectangle()
 void Rectangle::drawShape()
 {
     painter.drawRect(x1, y1, width, length);
+    painter.drawText(x1, y1, 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.

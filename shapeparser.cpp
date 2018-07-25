@@ -355,9 +355,6 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             QPen pen(brush, penWidth, penStyle, capStyle, joinStyle);
             pen.setColor(penColor);
 
-            // you should be passing the canvas in as the painter
-            // painter should only be a member of Shape class, not parser
-
             QStringList splitDims = shapeDimensions.split(",");
 
             for(int i = 0; i < splitDims.length(); i++)
@@ -372,7 +369,7 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
                         splitDims[2].toInt(), splitDims[3].toInt());
             }
             else if(shapeType == "Polyline")
-            {
+            {   
                 newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
             }
@@ -403,8 +400,17 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             }
             else if(shapeType == "Text")
             {
-                newShape = new Text(textString, textFontFamily, textPointSize, textColor, textAllignment,
-                                    textFontStyle, textFontWeight);
+                QFont font(textFontFamily, textPointSize, textFontWeight, false);
+                font.setStyle(textFontStyle);
+                QPen textPen;
+                textPen.setColor(textColor);
+                QBrush textBrush;
+                QPoint point = {splitDims[0].toInt(), splitDims[1].toInt()};
+                int width = splitDims[2].toInt();
+                int height = splitDims[3].toInt();
+
+                newShape = new Text(textPen, textBrush, shapeId, font, textString, textAllignment,
+                                                   point, width, height);
             }
 
             shapes->push_back(newShape);

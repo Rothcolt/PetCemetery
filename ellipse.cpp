@@ -16,7 +16,9 @@ Ellipse::~Ellipse() {}
 //! Draw the shape in the paint module.
 void Ellipse::drawShape()
 {
-    painter.drawEllipse(x1, y1, a, b);
+    QPoint points = {x1, y1};
+    painter.drawEllipse(points, a / 2, b / 2);
+    painter.drawText(points.x(), points.y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.

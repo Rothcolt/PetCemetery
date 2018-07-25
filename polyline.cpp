@@ -1,4 +1,5 @@
 #include "polyline.h"
+#include "vector.h"
 
 //! Paramterized constructor with all variables.
 Polyline::Polyline(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
@@ -23,7 +24,16 @@ Polyline::~Polyline()
 void Polyline::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function
-    // painter.drawPolyline();
+    QPoint p1(x1, y1);
+    QPoint p2(x2, y2);
+    QPoint p3(x3, y3);
+    Vector<QPoint> points;
+
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p3);
+    painter.drawPolyline(&points[0], points.size());
+    painter.drawText(points[0].x(), points[0].y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.

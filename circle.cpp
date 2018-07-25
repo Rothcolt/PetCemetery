@@ -19,8 +19,9 @@ Circle::~Circle()
 //! Draw the shape in the paint module.
 void Circle::drawShape()
 {
-//     Uses pointer to access and invoke QPainter object drawPolygone function.
-//     painter.drawPolygon(this, Qt::OddEvenFill);
+    QPoint points = {x, y};
+    painter.drawEllipse(points, radius / 2, radius / 2);
+    painter.drawText(points.x(), points.y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.

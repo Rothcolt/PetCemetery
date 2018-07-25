@@ -78,8 +78,8 @@ public:
      *
      * @param source Vector object to be copied. */
     Vector(Vector<Type>&& source)
-        : size_v { source.size_v }, elem { source.elem }, space { source.space } {
-
+        : size_v { source.size_v }, elem { source.elem }, space { source.space }
+    {
         // Release/reset source elements.
         source.size_v = 0;
         source.elem = NULL;
@@ -91,24 +91,9 @@ public:
      *
      * @param rhs Vector object to the right of the operator.
      * @return *this A pointer to the newly-modified object. */
-    Vector<Type>& operator=(const Vector& rhs) {
-
-//        // Create temporary copy (copy constructor).
-//        Vector temp(rhs);
-
-//        // Copy static elements.
-//        size_v = temp.size_v;
-//        space = temp.space;
-
-//        // Swap pointed-to data members.
-//        elem = temp.elem;
-
-//        // Release temporary vector.
-//        delete[] temp.elem;
-//        temp.size_v = 0;
-//        temp.space = 0;
-
-        if(elem != NULL)
+    Vector<Type>& operator=(const Vector& rhs)
+    {
+     if(elem != NULL)
         {
             delete[] elem;
         }
@@ -130,35 +115,30 @@ public:
      *
      * @param rhs Vector object to the right of the operator.
      * @return *this A pointer to the newly-modified object. */
-    Vector<Type>& operator=(Vector&& rhs) {
-
-/*        // LHS and RHS can't be equal.
-        if (this != rhs) {
-            delete[] elem*/;
-
+    Vector<Type>& operator=(Vector&& rhs)
+    {
         if(elem != NULL)
         {
             delete[] elem;
         }
 
-                    // Assign members.
-                    elem = rhs.elem;
-                    size_v = rhs.size_v;
-                    space = rhs.space;
+        // Assign members.
+        elem = rhs.elem;
+        size_v = rhs.size_v;
+        space = rhs.space;
 
-                    // Release RHS.
-                    rhs.elem = nullptr;
-                    rhs.size_v = 0;
-                    rhs.space = 0;
-//                    delete[] rhs.elem;
+        // Release RHS.
+        rhs.elem = nullptr;
+        rhs.size_v = 0;
+        rhs.space = 0;
 
         return *this;
     }
 
     /** @brief Vector<Type>::operator=
      * Default destructor for the vector class object. */
-    ~Vector() {
-
+    ~Vector()
+    {
         if(elem != nullptr)
         {
             delete[] elem;
@@ -172,8 +152,8 @@ public:
      * @param n Index of the array element to be returned.
      *
      * @return *this->elem[n] Reference to indexed array element. */
-    Type& operator[](int n) {
-
+    Type& operator[](int n)
+    {
         assert(n < size_v);
         return elem[n];
     }
@@ -184,8 +164,8 @@ public:
      * @param n Index of the array element to be returned.
      *
      * @return *this->elem[n] Value of indexed array element. */
-    const Type& operator[](int n) const {
-
+    const Type& operator[](int n) const
+    {
          assert(n < size_v);
         return elem[n];
     }
@@ -194,8 +174,8 @@ public:
      * This method will return the size of the vector array.
      *
      * @return size Array size. */
-    int size() const {
-
+    int size() const
+    {
         return size_v;
     }
 
@@ -203,8 +183,8 @@ public:
      * This method will return the remaining space in the vector array.
      *
      * @return space Remaining space. */
-    int capacity() const {
-
+    int capacity() const
+    {
         return space;
     }
 
@@ -212,9 +192,8 @@ public:
      * This method will modify the remaining space in the vector.
      *
      * @param newsize New vector size. */
-    void resize(int newSize)  {
-
-//        size_v = newsize;
+    void resize(int newSize)
+    {
         Type* temp = elem;
         elem = new Type[newSize];
         space = newSize;
@@ -236,18 +215,8 @@ public:
      * This method will add a new element to the vector.
      *
      * @param new_elem Element to be added. */
-    void push_back(Type& new_elem) {
-
-//        // ERROR: No more room in vector.
-//        if (space == 0) {
-
-//        }
-
-//        // Add new element to the array.
-//        elem[size_v] = new_elem;
-//        size_v++;
-//        space--;
-
+    void push_back(Type& new_elem)
+    {
         if(size_v + 1 > space)
         {
             Type* temp = elem;
@@ -271,10 +240,9 @@ public:
      * This method will allocate space to the vector object.
      *
      * @param newalloc Space to be reserved. */
-    void reserve(int size) {
-
-//        // Increase space to "reserve" memory.
-//        space = space + newalloc;
+    void reserve(int size)
+    {
+        // Increase space to "reserve" memory.
         if(size > space)
         {
             Type* temp = elem;
@@ -334,8 +302,6 @@ public:
      * @return *this Reference to vector. */
     v_iterator insert(v_iterator p, const Type& v)
     {
-
-
         // Add new element to the array.
         p - 1 = v;
 

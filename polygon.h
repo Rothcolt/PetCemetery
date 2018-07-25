@@ -2,6 +2,7 @@
 #define POLYGON_H
 
 #include "shape.h"
+#include "vector.h"
 
 /*! Derived from abstract base class Shape. */
 class Polygon: public Shape {
@@ -27,7 +28,6 @@ private:
     int y1;     /*! Position Variable : Holds second y-coordinate for polygon corner. */
     int y2;     /*! Position Variable : Holds third x-coordinate for polygon corner.  */
     int y3;     /*! Position Variable : Holds third y-coordinate for polygon corner.  */
-
 };
 
 #endif // POLYGON_Ha

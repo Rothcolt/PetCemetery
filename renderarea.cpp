@@ -16,26 +16,26 @@ RenderArea::RenderArea(QWidget *parent)
     : QWidget(parent)
 {
     // Fill canvas background with base color (white)
-    setMinimumSize(1000, 500);
-    setMaximumSize(1000, 500);
+    setMinimumSize(1100, 800);
+    setMaximumSize(1100, 800);
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     this->shapes = new Vector<Shape*>();
 }
 
-////! [1]
-//QSize RenderArea::minimumSizeHint() const
-//{
-//    return QSize(100, 100);
-//}
-////! [1]
+//! [1]
+QSize RenderArea::minimumSizeHint() const
+{
+    return QSize(100, 100);
+}
+//! [1]
 
-////! [2]
-//QSize RenderArea::sizeHint() const
-//{
-//    return QSize(400, 200);
-//}
-////! [2]
+//! [2]
+QSize RenderArea::sizeHint() const
+{
+    return QSize(400, 200);
+}
+//! [2]
 
 void RenderArea::setShapes(Vector<Shape *> *shapes)
 {
@@ -43,15 +43,8 @@ void RenderArea::setShapes(Vector<Shape *> *shapes)
     update();
 }
 
-// **IMPORTANT**
-// This function is called when you call update().
-// It is responsible for drawing your shapes on the canvas.
 void RenderArea::paintEvent(QPaintEvent * /* event */)
 {
-    // class for the canvas
-    // only call update wheb you wanna redraw the canvas
-    // paint event will call draw function for all shapes
-
     if(shapes->size() > 0)
     {
         for(Vector<Shape*>::v_iterator it = shapes->begin(); it != shapes->end(); ++it)
@@ -70,11 +63,12 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
         } // END - for
     } // END -if
 
-//    QPainter localPainter(this);
-//    localPainter.setPen(palette().dark().color());
-//    localPainter.setBrush(Qt::NoBrush);
-//    localPainter.drawRect(QRect(0, 0, width() - 1, height() - 1));
-
+    // restores original painter state
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, false);
+    painter.setPen(palette().dark().color());
+    painter.setBrush(Qt::NoBrush);
+    painter.drawRect(QRect(0, 0, width() - 1, height() - 1));
 }
 
 

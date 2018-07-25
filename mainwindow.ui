@@ -6,22 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1062</width>
+    <height>735</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>-1</x>
-      <y>-21</y>
-      <width>801</width>
-      <height>601</height>
+      <x>10</x>
+      <y>0</y>
+      <width>1031</width>
+      <height>1271</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="currentIndex">
      <number>1</number>
@@ -30,8 +42,8 @@
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>159</x>
-        <y>129</y>
+        <x>270</x>
+        <y>180</y>
         <width>451</width>
         <height>221</height>
        </rect>
@@ -78,26 +90,57 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_canvas">
-     <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <widget class="RenderArea" name="canvas" native="true">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>30</y>
-        <width>761</width>
-        <height>371</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1000</width>
+        <height>500</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="RenderArea" name="canvas" native="true"/>
-       </item>
-      </layout>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>1000</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1000</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>1000</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
      </widget>
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>410</y>
+        <y>530</y>
         <width>681</width>
         <height>161</height>
        </rect>
@@ -186,7 +229,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>6</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="line_dim">
          <widget class="QWidget" name="formLayoutWidget_3">
@@ -1255,16 +1298,20 @@
      <widget class="QPushButton" name="add_shape_button">
       <property name="geometry">
        <rect>
-        <x>710</x>
-        <y>470</y>
-        <width>80</width>
-        <height>51</height>
+        <x>780</x>
+        <y>600</y>
+        <width>101</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
        <string>Add Shape</string>
       </property>
      </widget>
+     <zorder>canvas</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+     <zorder>tabWidget</zorder>
+     <zorder>add_shape_button</zorder>
     </widget>
    </widget>
   </widget>
@@ -1273,8 +1320,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>22</height>
+     <width>1062</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu2D_Graphic_Modeler">
@@ -1284,6 +1331,12 @@
     <addaction name="actionImport"/>
    </widget>
    <widget class="QMenu" name="menuReports">
+    <property name="minimumSize">
+     <size>
+      <width>500</width>
+      <height>1000</height>
+     </size>
+    </property>
     <property name="title">
      <string>Reports</string>
     </property>
@@ -1297,7 +1350,6 @@
    <addaction name="menuReports"/>
    <addaction name="menuContact_us"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionImport">
    <property name="text">
     <string>Import</string>
@@ -1313,6 +1365,52 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>username_line</tabstop>
+  <tabstop>password_line</tabstop>
+  <tabstop>login_button</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>add_shape_button</tabstop>
+  <tabstop>shape_dropdown</tabstop>
+  <tabstop>line_y1_value</tabstop>
+  <tabstop>line_x2_value</tabstop>
+  <tabstop>line_y2_value</tabstop>
+  <tabstop>pLine_y3_value</tabstop>
+  <tabstop>pLine_y1_value</tabstop>
+  <tabstop>pLine_x1_value</tabstop>
+  <tabstop>pLine_y2_value</tabstop>
+  <tabstop>pLine_x2_value</tabstop>
+  <tabstop>pLine_x3_value</tabstop>
+  <tabstop>rect_len_value</tabstop>
+  <tabstop>rect_y1_value</tabstop>
+  <tabstop>rect_x1_value</tabstop>
+  <tabstop>rect_wid_value</tabstop>
+  <tabstop>square_len_value</tabstop>
+  <tabstop>square_y1_value</tabstop>
+  <tabstop>square_x1_value</tabstop>
+  <tabstop>ellipse_a_value</tabstop>
+  <tabstop>ellipse_y1_value</tabstop>
+  <tabstop>ellipse_x1_value</tabstop>
+  <tabstop>ellipse_b_value</tabstop>
+  <tabstop>circle_r_value</tabstop>
+  <tabstop>circle_y1_value</tabstop>
+  <tabstop>circle_x1_value</tabstop>
+  <tabstop>pen_color</tabstop>
+  <tabstop>pen_width</tabstop>
+  <tabstop>pen_style</tabstop>
+  <tabstop>pen_join</tabstop>
+  <tabstop>pen_cap</tabstop>
+  <tabstop>brush_style</tabstop>
+  <tabstop>brush_color</tabstop>
+  <tabstop>text_font_family</tabstop>
+  <tabstop>text_color</tabstop>
+  <tabstop>text_font_style</tabstop>
+  <tabstop>text_font_weight</tabstop>
+  <tabstop>text_allign</tabstop>
+  <tabstop>text_size</tabstop>
+  <tabstop>text</tabstop>
+  <tabstop>line_x1_value</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

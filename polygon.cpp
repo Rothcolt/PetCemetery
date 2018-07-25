@@ -19,7 +19,16 @@ Polygon::~Polygon() {}
 void Polygon::drawShape()
 {
     // Uses pointer to access and invoke QPainter object drawPolygone function.
-    // painter.drawPolygon(this, Qt::OddEvenFill);
+    QPoint p1(x1, y1);
+    QPoint p2(x2, y2);
+    QPoint p3(x3, y3);
+    Vector<QPoint> points;
+
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p3);
+    painter.drawPolygon(&points[0], points.size());
+    painter.drawText(points[0].x(), points[0].y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.
@@ -28,6 +37,7 @@ void Polygon::moveShape()
     // Resets polygon coordinates.
     // setPoints(3, x1, y1, x2, y2, x3, y3);
 }
+
 
 //! Return perimeter (not required).
 /* float Polygon::calcPerimShape() {

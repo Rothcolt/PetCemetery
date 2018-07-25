@@ -24,8 +24,8 @@ void Line::drawShape()
 
     painter.setPen(pen);
     painter.setBrush(brush);
-//    painter.drawLine(x1, y1, x2, y2);
     painter.drawLine(point1, point2);
+    painter.drawText(point1.x(), point1.y(), 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.

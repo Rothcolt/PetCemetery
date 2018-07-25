@@ -19,8 +19,8 @@ Square::~Square()
 //! Draw the shape in the paint module.
 void Square::drawShape()
 {
-    // Uses pointer to access and invoke QPainter object drawPolygone function.
-    // painter.drawPolygon(this, Qt::OddEvenFill);
+    painter.drawRect(x, y, length, length);
+    painter.drawText(x, y, 20, 20, Qt::AlignCenter, QString::number(id));
 }
 
 //! Change coordinates and move shape.
