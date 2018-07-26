@@ -1,6 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#include <assert.h>
 #include "shape.h"
 
 /* Default vector size. */
