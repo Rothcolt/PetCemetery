@@ -155,7 +155,7 @@ public:
      * @return *this->elem[n] Reference to indexed array element. */
     Type& operator[](int n)
     {
-        // assert(n < size_v);
+        assert(n < size_v);
         return elem[n];
     }
 
@@ -167,7 +167,7 @@ public:
      * @return *this->elem[n] Value of indexed array element. */
     const Type& operator[](int n) const
     {
-        // assert(n < size_v);
+        assert(n < size_v);
         return elem[n];
     }
 
