@@ -72,4 +72,5 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
 }
 
 
+
 //! [13]

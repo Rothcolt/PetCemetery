@@ -6,7 +6,8 @@
 // Used for keeping track of page indices
 enum Pages {
     LOGIN,
-    CANVAS
+    CANVAS,
+    REPORT_ID
 };
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -56,4 +57,38 @@ void MainWindow::on_actionImport_triggered()
     QString importFile = QFileDialog::getOpenFileName();
     ui->canvas->setShapes(this->parser->ReadInShape(importFile));
 
+}
+
+void MainWindow::on_actionReport_by_Shape_ID_triggered()
+{
+   ui->stackedWidget->setCurrentIndex(REPORT_ID);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(CANVAS);
+}
+
+void MainWindow::on_add_shape_button_clicked()
+{
+//    enum editShapePage{
+//        SHAPE,
+//        PEN,
+//        BRUSH,
+//        TEXT
+//    };
+
+//    Vector<Shape> shapesList;
+
+//    // create shape
+//    // add shape to vector of shapes in program
+
+//    ui->canvas->setShapes(shapesList);
+}
+
+
+
+void MainWindow::on_shape_type_currentIndexChanged(int index)
+{
+    ui->shape_dimensions->setCurrentIndex(index);
 }

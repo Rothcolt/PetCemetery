@@ -22,11 +22,17 @@ private slots:
 
     void on_actionImport_triggered();
 
+    void on_actionReport_by_Shape_ID_triggered();
+
+    void on_pushButton_clicked();
+
+    void on_add_shape_button_clicked();
+
+    void on_shape_type_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     ShapeParser *parser;
-      // global vector
-
 };
 
 #endif // MAINWINDOW_H

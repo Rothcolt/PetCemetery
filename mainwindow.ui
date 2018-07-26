@@ -168,12 +168,12 @@
             <string>Shape: </string>
            </property>
            <property name="buddy">
-            <cstring>shape_dropdown</cstring>
+            <cstring>shape_type</cstring>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QComboBox" name="shape_dropdown">
+          <widget class="QComboBox" name="shape_type">
            <property name="editable">
             <bool>false</bool>
            </property>
@@ -229,7 +229,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="line_dim">
          <widget class="QWidget" name="formLayoutWidget_3">
@@ -302,8 +302,8 @@
          <widget class="QWidget" name="formLayoutWidget_4">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>20</y>
+            <x>10</x>
+            <y>0</y>
             <width>321</width>
             <height>89</height>
            </rect>
@@ -385,7 +385,93 @@
           </layout>
          </widget>
         </widget>
-        <widget class="QWidget" name="polygon_dim"/>
+        <widget class="QWidget" name="polygon_dim">
+         <widget class="QWidget" name="formLayoutWidget_10">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>0</y>
+            <width>321</width>
+            <height>89</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="pGon_dim_grid_">
+           <item row="2" column="5">
+            <widget class="QSpinBox" name="pLine_y3_value_2"/>
+           </item>
+           <item row="0" column="5">
+            <widget class="QSpinBox" name="pGon_y1_value"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="pGon_x1_value"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="pGon_x1_label">
+             <property name="text">
+              <string>x1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="pGon_x2_label">
+             <property name="text">
+              <string>x2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="pGon_y1_label">
+             <property name="text">
+              <string>y1: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLabel" name="pGon_y2_label">
+             <property name="text">
+              <string>y2: </string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QSpinBox" name="pGon_y2_value"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="pGon_x2_value"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="pGon_x3_label">
+             <property name="text">
+              <string>x3:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLabel" name="pGon_y3_label">
+             <property name="text">
+              <string>y3:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="pGon_x3_value"/>
+           </item>
+           <item row="1" column="3">
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>10</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </widget>
         <widget class="QWidget" name="rectangle_dim">
          <widget class="QWidget" name="formLayoutWidget_5">
           <property name="geometry">
@@ -1308,10 +1394,57 @@
        <string>Add Shape</string>
       </property>
      </widget>
-     <zorder>canvas</zorder>
-     <zorder>verticalLayoutWidget</zorder>
-     <zorder>tabWidget</zorder>
-     <zorder>add_shape_button</zorder>
+    </widget>
+    <widget class="QWidget" name="reports_page">
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>40</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Shape Listing Report - Shape ID</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="id_listing">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>90</y>
+        <width>581</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Shape Type</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>540</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Return to Painter</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -1321,7 +1454,7 @@
      <x>0</x>
      <y>0</y>
      <width>1062</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu2D_Graphic_Modeler">
@@ -1340,6 +1473,7 @@
     <property name="title">
      <string>Reports</string>
     </property>
+    <addaction name="actionReport_by_Shape_ID"/>
    </widget>
    <widget class="QMenu" name="menuContact_us">
     <property name="title">
@@ -1353,6 +1487,11 @@
   <action name="actionImport">
    <property name="text">
     <string>Import</string>
+   </property>
+  </action>
+  <action name="actionReport_by_Shape_ID">
+   <property name="text">
+    <string>Report by Shape ID</string>
    </property>
   </action>
  </widget>
@@ -1371,7 +1510,7 @@
   <tabstop>login_button</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>add_shape_button</tabstop>
-  <tabstop>shape_dropdown</tabstop>
+  <tabstop>shape_type</tabstop>
   <tabstop>line_y1_value</tabstop>
   <tabstop>line_x2_value</tabstop>
   <tabstop>line_y2_value</tabstop>
