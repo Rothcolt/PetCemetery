@@ -7,7 +7,8 @@
 enum Pages {
     LOGIN,
     CANVAS,
-    REPORT_ID
+    REPORT_ID,
+    CONTACT_US
 };
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -61,12 +62,15 @@ void MainWindow::on_actionImport_triggered()
 
 void MainWindow::on_actionReport_by_Shape_ID_triggered()
 {
+   // changes page to reports page
    ui->stackedWidget->setCurrentIndex(REPORT_ID);
+
 }
 
 void MainWindow::on_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(CANVAS);
+
 }
 
 void MainWindow::on_add_shape_button_clicked()
@@ -91,4 +95,14 @@ void MainWindow::on_add_shape_button_clicked()
 void MainWindow::on_shape_type_currentIndexChanged(int index)
 {
     ui->shape_dimensions->setCurrentIndex(index);
+}
+
+void MainWindow::on_return_painter_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(CANVAS);
+}
+
+void MainWindow::on_actionContact_Page_triggered()
+{
+    ui->stackedWidget->setCurrentIndex(CONTACT_US);
 }

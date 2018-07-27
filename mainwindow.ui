@@ -24,7 +24,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>-10</y>
       <width>1031</width>
       <height>1271</height>
      </rect>
@@ -36,7 +36,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QWidget" name="formLayoutWidget">
@@ -397,7 +397,7 @@
           </property>
           <layout class="QGridLayout" name="pGon_dim_grid_">
            <item row="2" column="5">
-            <widget class="QSpinBox" name="pLine_y3_value_2"/>
+            <widget class="QSpinBox" name="pGon_y3_value"/>
            </item>
            <item row="0" column="5">
             <widget class="QSpinBox" name="pGon_y1_value"/>
@@ -1446,6 +1446,110 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="contact_us_page">
+     <widget class="QLabel" name="contact_header">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>150</y>
+        <width>401</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>38</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="text">
+       <string>Contact Us</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="email_label">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>290</y>
+        <width>411</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Email: shrek@whatareyoudoinginmyswamp.com</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="phone_label">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>350</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Phone:  1-800-MY-SWAMP</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="address_label">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>400</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Address: Shrek's Swamp, Magical Forest, Far Far Away</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="return_painter_button">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>560</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Return to Painter</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1479,6 +1583,7 @@
     <property name="title">
      <string>Contact us</string>
     </property>
+    <addaction name="actionContact_Page"/>
    </widget>
    <addaction name="menu2D_Graphic_Modeler"/>
    <addaction name="menuReports"/>
@@ -1492,6 +1597,11 @@
   <action name="actionReport_by_Shape_ID">
    <property name="text">
     <string>Report by Shape ID</string>
+   </property>
+  </action>
+  <action name="actionContact_Page">
+   <property name="text">
+    <string>Contact Page</string>
    </property>
   </action>
  </widget>

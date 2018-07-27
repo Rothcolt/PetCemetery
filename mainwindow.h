@@ -30,6 +30,10 @@ private slots:
 
     void on_shape_type_currentIndexChanged(int index);
 
+    void on_return_painter_button_clicked();
+
+    void on_actionContact_Page_triggered();
+
 private:
     Ui::MainWindow *ui;
     ShapeParser *parser;
