@@ -1,8 +1,8 @@
 #include "text.h"
 
-Text::Text(QPen pen, QBrush brush, int id, QFont font, QString text, Qt::AlignmentFlag textAlignment,
+Text::Text(QPen pen, QBrush brush, int id, QString type, QFont font, QString text, Qt::AlignmentFlag textAlignment,
                 QPoint point, int width, int height)
-      : Shape(pen, brush, id)
+      : Shape(pen, brush, id, type)
 {
     stringText = text;
     this->font = font;

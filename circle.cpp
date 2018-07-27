@@ -1,8 +1,8 @@
 #include "circle.h"
 
 //! Paramterized constructor with all variables.
-Circle::Circle(QPen pen, QBrush brush, int id, int x, int y, int radius)
-         :Shape(pen, brush, id)
+Circle::Circle(QPen pen, QBrush brush, int id, QString type,  int x, int y, int radius)
+         :Shape(pen, brush, id, type)
 {
     // Circle variables.
     this->x = x;

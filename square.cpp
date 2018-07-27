@@ -1,8 +1,8 @@
 #include "square.h"
 
 //! Paramterized constructor with all variables.
-Square::Square(QPen pen, QBrush brush, int id, int x, int y, int length)
-           :Shape(pen, brush, id)
+Square::Square(QPen pen, QBrush brush, int id, QString type, int x, int y, int length)
+           :Shape(pen, brush, id, type)
 {
     // Square variables.
     this->x = x;

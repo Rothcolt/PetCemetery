@@ -10,7 +10,7 @@ public:
     /*! Square object, with position and side length variables.
      * Able to be drawn and moved. */
 
-    Square(QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
+    Square(QPen pen, QBrush brush, int id, QString type,     /*! Parameterized constructor */
            int x, int y, int length);              /*! with all variables.       */
     virtual ~Square();                          /*! Default destructor.       */
 

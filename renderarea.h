@@ -18,6 +18,7 @@ public:
     QSize minimumSizeHint() const override;
     QSize sizeHint() const override;
     void setShapes(Vector<Shape*> *shapes);
+    Vector<Shape*>* getShapes() const;
 
 public slots:
 

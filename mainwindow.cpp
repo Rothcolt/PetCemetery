@@ -11,6 +11,16 @@ enum Pages {
     CONTACT_US
 };
 
+enum shapeTypes {
+    LINE,
+    POLYLINE,
+    POLYGON,
+    RECTANGLE,
+    SQUARE,
+    ELLIPSE,
+    CIRCLE
+};
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,15 +37,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_login_button_clicked()
 {
-   QString username = ui->username_line->text(); // User entered username
-   QString password = ui->password_line->text(); // User entered password
+    QString username = ui->username_line->text(); // User entered username
+    QString password = ui->password_line->text(); // User entered password
 
-     // Checks if username & password is valid
+    // Checks if username & password is valid
     if(username == "shrek" && password == "swamp")
     {
         // Set the current page to the Canvas page
         ui->stackedWidget->setCurrentIndex(CANVAS);
-//        ui->stackedWidget->show();
+        //        ui->stackedWidget->show();
 
 
     }
@@ -62,9 +72,30 @@ void MainWindow::on_actionImport_triggered()
 
 void MainWindow::on_actionReport_by_Shape_ID_triggered()
 {
-   // changes page to reports page
-   ui->stackedWidget->setCurrentIndex(REPORT_ID);
 
+    // changes page to reports page
+    ui->stackedWidget->setCurrentIndex(REPORT_ID);
+
+    // set rows to same value as vector size
+    // add for loop
+    ui->tableWidget->setRowCount(5);
+    ui->tableWidget->setSortingEnabled(true);
+
+    Vector<Shape*> *shapes = ui->canvas->getShapes();
+
+    QTableWidgetItem *item = new QTableWidgetItem;
+    Vector<Shape*>::v_iterator it = shapes->begin();
+    int row = 0;
+
+    while(it != shapes->end())
+    {
+        item = new QTableWidgetItem;
+        item->setData(Qt::DisplayRole, (*it)->getId());
+        ui->tableWidget->setItem(row,0, item);
+        ui->tableWidget->setItem(row,1, new QTableWidgetItem((*it)->getType()));
+        row++;
+        it++;
+    }
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -75,6 +106,15 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_add_shape_button_clicked()
 {
+    int shapeId;
+    int penWidth = ui->pen_width->value();
+    int textPointSize = ui->text_size->value();
+    QString shapeType = ui->shape_type->currentText();
+
+    // GET SHAPE DATA FROM PAINTER
+//    if(ui->shape_dimensions->currentIndex() <= CIRCLE)
+//    {
+//    }
 
 }
 

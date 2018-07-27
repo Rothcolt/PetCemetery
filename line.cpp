@@ -1,8 +1,8 @@
 #include "line.h"
 
 //! Paramterized constructor with all variables.
-Line::Line(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2)
-       :Shape(pen, brush, id)
+Line::Line(QPen pen, QBrush brush, int id, QString type, int x1, int y1, int x2, int y2)
+       :Shape(pen, brush, id, type)
 {
     this->x1 = x1;
     this->y1 = y1;

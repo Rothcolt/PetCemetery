@@ -36,7 +36,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="login">
      <widget class="QWidget" name="formLayoutWidget">
@@ -1399,7 +1399,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>310</x>
         <y>40</y>
         <width>211</width>
         <height>21</height>
@@ -1408,29 +1408,6 @@
       <property name="text">
        <string>Shape Listing Report - Shape ID</string>
       </property>
-     </widget>
-     <widget class="QTableWidget" name="id_listing">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>90</y>
-        <width>581</width>
-        <height>391</height>
-       </rect>
-      </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QAbstractScrollArea::AdjustToContents</enum>
-      </property>
-      <column>
-       <property name="text">
-        <string>ID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Shape Type</string>
-       </property>
-      </column>
      </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
@@ -1443,6 +1420,39 @@
       </property>
       <property name="text">
        <string>Return to Painter</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>155</x>
+        <y>120</y>
+        <width>521</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Shape Type</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>231</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>* Double click column name to sort *</string>
       </property>
      </widget>
     </widget>

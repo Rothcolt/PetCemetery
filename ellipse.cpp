@@ -1,8 +1,8 @@
 #include "ellipse.h"
 
 //! Paramterized constructor with all variables.
-Ellipse::Ellipse(QPen pen, QBrush brush, int id, int x1, int y1, int a, int b)
-          :Shape(pen, brush, id)
+Ellipse::Ellipse(QPen pen, QBrush brush, int id, QString type, int x1, int y1, int a, int b)
+          :Shape(pen, brush, id, type)
 {
     this->x1 = x1;
     this->y1 = y1;

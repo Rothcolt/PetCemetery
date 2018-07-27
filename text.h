@@ -7,7 +7,7 @@ class Text : public Shape
 {
 public:
     // **** CONSTRUCTORS ***************** //
-    Text(QPen pen, QBrush brush, int id, QFont font, QString text, Qt::AlignmentFlag textAlignment,
+    Text(QPen pen, QBrush brush, int id, QString type, QFont font, QString text, Qt::AlignmentFlag textAlignment,
             QPoint point, int width, int height);
     // **** DESTRUCTOR ***************** //
     virtual ~Text();

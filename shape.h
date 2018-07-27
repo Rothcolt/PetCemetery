@@ -10,7 +10,7 @@ public:
     /*! Shape object with QPainter variables.
      * Virtual functions allow shape to be drawn and moved. */
 
-    Shape(QPen pen, QBrush brush, int id);              /*! Parameterized constructor. */
+    Shape(QPen pen, QBrush brush, int id, QString type);        /*! Parameterized constructor. */
     virtual ~Shape();                                   /*! Default destructor.        */
 
     virtual void drawShape() = 0;      /*! Draw the shape in the paint module. */
@@ -19,7 +19,7 @@ public:
     QPen getPen();                                      /*! Getter for the QPen object.   */
     QBrush getBrush();                                  /*! Getter for the QBrush object. */
     int getId();                                        /*! Getter for the ID variable.   */
-
+    QString getType();
 private:
 
 /*    float area;      */                               /*! Shape's calculated area.      */
@@ -30,6 +30,7 @@ protected:
     QPen pen;                                           /*! Pen used on shape.   */
     QBrush brush;                                       /*! Brush used on shape. */
     int id;                                             /*! Shape IDa.           */
+    QString type;
 
 };
 

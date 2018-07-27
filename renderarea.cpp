@@ -43,6 +43,11 @@ void RenderArea::setShapes(Vector<Shape *> *shapes)
     update();
 }
 
+Vector<Shape *> *RenderArea::getShapes() const
+{
+    return shapes;
+}
+
 void RenderArea::paintEvent(QPaintEvent * /* event */)
 {
     if(shapes->size() > 0)
@@ -70,7 +75,4 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
     painter.setBrush(Qt::NoBrush);
     painter.drawRect(QRect(0, 0, width() - 1, height() - 1));
 }
-
-
-
 //! [13]

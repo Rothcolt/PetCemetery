@@ -11,7 +11,7 @@ public:
      * Able to be drawn and moved. */
 
     Line(QPen pen, QBrush brush, int id,        /*! Paramterized constructor  */
-         int x1, int y1, int x2, int y2);       /*! with all variables.       */
+         QString type, int x1, int y1, int x2, int y2);       /*! with all variables.       */
     virtual ~Line();                            /*! Default destructor.       */
 
     virtual void drawShape();  /*! Draw the shape in the paint module. */

@@ -144,37 +144,37 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             //  Creates specified shape type & intializes with read in values
             if(shapeType == "Line")
             {
-                newShape = new Line(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Line(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt());
             }
             else if(shapeType == "Polyline")
             {   
-                newShape = new Polyline(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Polyline(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
             }
             else if(shapeType == "Polygon")
             {
-                newShape = new Polygon(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Polygon(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt(), splitDims[4].toInt(), splitDims[5].toInt());
             }
             else if(shapeType == "Rectangle")
             {
-                newShape = new Rectangle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Rectangle(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt());
             }
             else if(shapeType == "Square")
             {
-                newShape = new Square(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Square(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt());
             }
             else if(shapeType == "Ellipse")
             {
-                newShape = new Ellipse(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Ellipse(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt(), splitDims[3].toInt());
             }
             else if(shapeType == "Circle")
             {
-                newShape = new Circle(pen, brush, shapeId, splitDims[0].toInt(), splitDims[1].toInt(),
+                newShape = new Circle(pen, brush, shapeId, shapeType, splitDims[0].toInt(), splitDims[1].toInt(),
                         splitDims[2].toInt());
             }
             else if(shapeType == "Text")
@@ -188,7 +188,7 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
                 int width = splitDims[2].toInt();
                 int height = splitDims[3].toInt();
 
-                newShape = new Text(textPen, textBrush, shapeId, font, textString, textAllignment,
+                newShape = new Text(textPen, textBrush, shapeId, shapeType, font, textString, textAllignment,
                                                    point, width, height);
             }
 

@@ -1,8 +1,8 @@
 #include "polygon.h"
 
 //! Paramterized constructor with all variables.
-Polygon::Polygon(QPen pen, QBrush brush, int id, int x1, int y1, int x2, int y2, int x3, int y3)
-             :Shape(pen, brush, id)
+Polygon::Polygon(QPen pen, QBrush brush, int id, QString type, int x1, int y1, int x2, int y2, int x3, int y3)
+             :Shape(pen, brush, id, type)
 {
     this->x1 = x1;
     this->x2 = x2;

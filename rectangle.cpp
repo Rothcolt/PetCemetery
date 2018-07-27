@@ -1,8 +1,8 @@
 #include "rectangle.h"
 
 //! Paramterized constructor with all variables.
-Rectangle::Rectangle(QPen pen, QBrush brush, int id, int x1, int y1, int w, int l)
-               :Shape(pen, brush, id)
+Rectangle::Rectangle(QPen pen, QBrush brush, int id, QString type, int x1, int y1, int w, int l)
+               :Shape(pen, brush, id, type)
 {
    this->x1 = x1;
    this->y1 = y1;

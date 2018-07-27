@@ -11,7 +11,7 @@ public:
      * Able to be drawn and moved. */
 
     Circle(QPen pen, QBrush brush, int id,      /*! Parameterized constructor */
-           int x, int y, int radius);              /*! with all variables.       */
+           QString type, int x, int y, int radius);              /*! with all variables.       */
     virtual ~Circle();                          /*! Default destructor.       */
 
     virtual void drawShape();  /*! Draw the shape in the paint module. */

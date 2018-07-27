@@ -11,7 +11,7 @@ public:
      * Able to be drawn and moved. */
 
     Rectangle(QPen pen, QBrush brush, int id,       /*! Parameterized constructor */
-              int x1, int y1, int w, int l);        /*! with all variables.       */
+              QString type, int x1, int y1, int w, int l);        /*! with all variables.       */
     virtual ~Rectangle();                           /*! Default destructor.       */
 
     virtual void drawShape();      /*! Draw the shape in the paint module. */
