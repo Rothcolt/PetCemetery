@@ -73,43 +73,7 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             }
             else if(key == "PenColor")
             {
-                // Checks & sets pen color type
-                if(value == "white")
-                {
-                    penColor = Qt::GlobalColor::white;
-                }
-                else if(value == "black")
-                {
-                    penColor = Qt::GlobalColor::black;
-                }
-                else if(value == "red")
-                {
-                    penColor = Qt::GlobalColor::red;
-                }
-                else if(value == "green")
-                {
-                    penColor = Qt::GlobalColor::green;
-                }
-                else if(value == "blue")
-                {
-                    penColor = Qt::GlobalColor::blue;
-                }
-                else if(value == "cyan")
-                {
-                    penColor = Qt::GlobalColor::cyan;
-                }
-                else if(value == "magenta")
-                {
-                    penColor = Qt::GlobalColor::magenta;
-                }
-                else if(value == "yellow")
-                {
-                    penColor = Qt::GlobalColor::yellow;
-                }
-                else if(value == "gray")
-                {
-                    penColor = Qt::GlobalColor::gray;
-                }
+                penColor = setPenColor(value);
             }
             else if(key == "PenWidth")
             {
@@ -117,123 +81,23 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             }
             else if(key == "PenStyle")
             {
-                // Checks & sets pen style type
-                if(value == "NoPen")
-                {
-                    penStyle = Qt::PenStyle::NoPen;
-                }
-                else if(value == "SolidLine")
-                {
-                    penStyle = Qt::PenStyle::SolidLine;
-                }
-                else if(value == "DashLine")
-                {
-                    penStyle = Qt::PenStyle::DashLine;
-                }
-                else if(value == "DotLine")
-                {
-                    penStyle = Qt::PenStyle::DotLine;
-                }
-                else if(value == "DashDotLine")
-                {
-                    penStyle = Qt::PenStyle::DashDotLine;
-                }
-                else if(value == "DashDotDotLine")
-                {
-                    penStyle = Qt::PenStyle::DashDotDotLine;
-                }
+                penStyle = setPenStyle(value);
             }
             else if(key == "PenCapStyle")
             {
-                // Checks & sets pen cap style
-                if(value == "FlatCap")
-                {
-                    capStyle = Qt::PenCapStyle::FlatCap;
-                }
-                else if(value == "SquareCap")
-                {
-                    capStyle = Qt::PenCapStyle::SquareCap;
-                }
-                else if(value == "RoundCap")
-                {
-                    capStyle = Qt::PenCapStyle::RoundCap;
-                }
+                capStyle = setCapStyle(value);
             }
             else if(key == "PenJoinStyle")
             {
-                // Checks & sets pen join style
-                if(value == "MiterJoin")
-                {
-                    joinStyle = Qt::PenJoinStyle::MiterJoin;
-                }
-                else if(value == "BevelJoin")
-                {
-                    joinStyle = Qt::PenJoinStyle::BevelJoin;
-                }
-                else if(value == "RoundJoin")
-                {
-                    joinStyle = Qt::PenJoinStyle::RoundJoin;
-                }
+                joinStyle = setJoinStyle(value);
             }
             else if(key == "BrushColor")
             {
-                // Checks & sets brush color type
-                if(value == "white")
-                {
-                    brushColor = Qt::GlobalColor::white;
-                }
-                else if(value == "black")
-                {
-                    brushColor = Qt::GlobalColor::black;
-                }
-                else if(value == "red")
-                {
-                    brushColor = Qt::GlobalColor::red;
-                }
-                else if(value == "green")
-                {
-                    brushColor = Qt::GlobalColor::green;
-                }
-                else if(value == "blue")
-                {
-                    brushColor = Qt::GlobalColor::blue;
-                }
-                else if(value == "cyan")
-                {
-                    brushColor = Qt::GlobalColor::cyan;
-                }
-                else if(value == "magenta")
-                {
-                    brushColor = Qt::GlobalColor::magenta;
-                }
-                else if(value == "yellow")
-                {
-                    brushColor = Qt::GlobalColor::yellow;
-                }
-                else if(value == "gray")
-                {
-                    brushColor = Qt::GlobalColor::gray;
-                }
+                brushColor = setBrushColor(value);
             }
             else if(key == "BrushStyle")
             {
-                // Checks & sets brush style type
-                if(value == "SolidPattern")
-                {
-                    brushStyle = Qt::BrushStyle::SolidPattern;
-                }
-                else if(value == "HorPattern")
-                {
-                    brushStyle = Qt::BrushStyle::HorPattern;
-                }
-                else if(value == "VerPattern")
-                {
-                    brushStyle = Qt::BrushStyle::VerPattern;
-                }
-                else if(value == "NoBrush")
-                {
-                    brushStyle = Qt::BrushStyle::NoBrush;
-                }
+                brushStyle = setBrushStyle(value);
             }
             else if(key == "TextString")
             {
@@ -241,67 +105,11 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             }
             else if(key == "TextColor")
             {
-                // Checks & sets text color type
-                if(value == "white")
-                {
-                    textColor = Qt::GlobalColor::white;
-                }
-                else if(value == "black")
-                {
-                    textColor = Qt::GlobalColor::black;
-                }
-                else if(value == "red")
-                {
-                    textColor = Qt::GlobalColor::red;
-                }
-                else if(value == "green")
-                {
-                    textColor = Qt::GlobalColor::green;
-                }
-                else if(value == "blue")
-                {
-                    textColor = Qt::GlobalColor::blue;
-                }
-                else if(value == "cyan")
-                {
-                    textColor = Qt::GlobalColor::cyan;
-                }
-                else if(value == "magenta")
-                {
-                    textColor = Qt::GlobalColor::magenta;
-                }
-                else if(value == "yellow")
-                {
-                    textColor = Qt::GlobalColor::yellow;
-                }
-                else if(value == "gray")
-                {
-                    textColor = Qt::GlobalColor::gray;
-                }
+                textColor = setTextColor(value);
             }
             else if(key == "TextAlignment")
             {
-                // Checks & sets text alignment type
-                if(value == "AlignLeft")
-                {
-                    textAllignment = Qt::AlignmentFlag::AlignLeft;
-                }
-                else if(value == "AlignRight")
-                {
-                    textAllignment = Qt::AlignmentFlag::AlignRight;
-                }
-                else if(value == "AlignTop")
-                {
-                    textAllignment = Qt::AlignmentFlag::AlignTop;
-                }
-                else if(value == "AlignBottom")
-                {
-                    textAllignment = Qt::AlignmentFlag::AlignBottom;
-                }
-                else if(value == "AlignCenter")
-                {
-                    textAllignment = Qt::AlignmentFlag::AlignCenter;
-                }
+                textAllignment = setTextAlignment(value);
             }
             else if(key == "TextPointSize")
             {
@@ -313,41 +121,12 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
             }
             else if(key == "TextFontStyle")
             {
-                // Checks & sets font style type
-                if(value == "StyleNormal")
-                {
-                    textFontStyle = QFont::Style::StyleNormal;
-                }
-                else if(value == "StyleItalic")
-                {
-                    textFontStyle = QFont::Style::StyleItalic;
-                }
-                else if(value == "StyleOblique")
-                {
-                    textFontStyle = QFont::Style::StyleOblique;
-                }
+                textFontStyle = setTextFontStyle(value);
             }
             else if(key == "TextFontWeight")
             {
-                // Checks & sets font weight type
-                if(value == "Thin")
-                {
-                    textFontWeight = QFont::Weight::Thin;
-                }
-                else if(value == "Light")
-                {
-                    textFontWeight = QFont::Weight::Light;
-                }
-                else if(value == "Normal")
-                {
-                    textFontWeight = QFont::Weight::Normal;
-                }
-                else if (value == "Bold")
-                {
-                    textFontWeight = QFont::Weight::Bold;
-                }
+                textFontWeight = setTextFontWeight(value);
             }
-
         }
         else
         {
@@ -417,4 +196,353 @@ Vector<Shape *> *ShapeParser::ReadInShape(QString filePath) {
         }// END - if(tokens.length() > 1)
     }// END - while (!in.atEnd())
     return shapes;
+}
+
+Qt::GlobalColor ShapeParser::setPenColor(QString value)
+{
+    Qt::GlobalColor penColor;
+
+    // Checks & sets pen color type
+    if(value == "white")
+    {
+        penColor = Qt::GlobalColor::white;
+    }
+    else if(value == "black")
+    {
+        penColor = Qt::GlobalColor::black;
+    }
+    else if(value == "red")
+    {
+        penColor = Qt::GlobalColor::red;
+    }
+    else if(value == "green")
+    {
+        penColor = Qt::GlobalColor::green;
+    }
+    else if(value == "blue")
+    {
+        penColor = Qt::GlobalColor::blue;
+    }
+    else if(value == "cyan")
+    {
+        penColor = Qt::GlobalColor::cyan;
+    }
+    else if(value == "magenta")
+    {
+        penColor = Qt::GlobalColor::magenta;
+    }
+    else if(value == "yellow")
+    {
+        penColor = Qt::GlobalColor::yellow;
+    }
+    else if(value == "gray")
+    {
+        penColor = Qt::GlobalColor::gray;
+    }
+    else
+    {
+        penColor = Qt::GlobalColor::black;
+    }
+
+    return penColor;
+}
+
+Qt::PenStyle ShapeParser::setPenStyle(QString value)
+{
+    Qt::PenStyle penStyle;
+
+    // Checks & sets pen style type
+    if(value == "NoPen")
+    {
+        penStyle = Qt::PenStyle::NoPen;
+    }
+    else if(value == "SolidLine")
+    {
+        penStyle = Qt::PenStyle::SolidLine;
+    }
+    else if(value == "DashLine")
+    {
+        penStyle = Qt::PenStyle::DashLine;
+    }
+    else if(value == "DotLine")
+    {
+        penStyle = Qt::PenStyle::DotLine;
+    }
+    else if(value == "DashDotLine")
+    {
+        penStyle = Qt::PenStyle::DashDotLine;
+    }
+    else if(value == "DashDotDotLine")
+    {
+        penStyle = Qt::PenStyle::DashDotDotLine;
+    }
+    else
+    {
+        penStyle = Qt::PenStyle::SolidLine;
+    }
+
+    return penStyle;
+}
+
+Qt::PenCapStyle   ShapeParser::setCapStyle(QString value)
+{
+    Qt::PenCapStyle capStyle;
+
+    // Checks & sets pen cap style
+    if(value == "FlatCap")
+    {
+        capStyle = Qt::PenCapStyle::FlatCap;
+    }
+    else if(value == "SquareCap")
+    {
+        capStyle = Qt::PenCapStyle::SquareCap;
+    }
+    else if(value == "RoundCap")
+    {
+        capStyle = Qt::PenCapStyle::RoundCap;
+    }
+    else
+    {
+        capStyle = Qt::PenCapStyle::FlatCap;
+    }
+
+    return capStyle;
+}
+
+Qt::PenJoinStyle  ShapeParser::setJoinStyle(QString value)
+{
+    Qt::PenJoinStyle joinStyle;
+
+    // Checks & sets pen join style
+    if(value == "MiterJoin")
+    {
+        joinStyle = Qt::PenJoinStyle::MiterJoin;
+    }
+    else if(value == "BevelJoin")
+    {
+        joinStyle = Qt::PenJoinStyle::BevelJoin;
+    }
+    else if(value == "RoundJoin")
+    {
+        joinStyle = Qt::PenJoinStyle::RoundJoin;
+    }
+    else
+    {
+        joinStyle = Qt::PenJoinStyle::RoundJoin;
+    }
+    return joinStyle;
+}
+
+Qt::GlobalColor   ShapeParser::setBrushColor(QString value)
+{
+    Qt::GlobalColor brushColor;
+
+    // Checks & sets brush color type
+    if(value == "white")
+    {
+        brushColor = Qt::GlobalColor::white;
+    }
+    else if(value == "black")
+    {
+        brushColor = Qt::GlobalColor::black;
+    }
+    else if(value == "red")
+    {
+        brushColor = Qt::GlobalColor::red;
+    }
+    else if(value == "green")
+    {
+        brushColor = Qt::GlobalColor::green;
+    }
+    else if(value == "blue")
+    {
+        brushColor = Qt::GlobalColor::blue;
+    }
+    else if(value == "cyan")
+    {
+        brushColor = Qt::GlobalColor::cyan;
+    }
+    else if(value == "magenta")
+    {
+        brushColor = Qt::GlobalColor::magenta;
+    }
+    else if(value == "yellow")
+    {
+        brushColor = Qt::GlobalColor::yellow;
+    }
+    else if(value == "gray")
+    {
+        brushColor = Qt::GlobalColor::gray;
+    }
+    else
+    {
+        brushColor = Qt::GlobalColor::white;
+    }
+
+    return brushColor;
+}
+
+Qt::BrushStyle    ShapeParser::setBrushStyle(QString value)
+{
+    Qt::BrushStyle brushStyle;
+
+    // Checks & sets brush style type
+    if(value == "SolidPattern")
+    {
+        brushStyle = Qt::BrushStyle::SolidPattern;
+    }
+    else if(value == "HorPattern")
+    {
+        brushStyle = Qt::BrushStyle::HorPattern;
+    }
+    else if(value == "VerPattern")
+    {
+        brushStyle = Qt::BrushStyle::VerPattern;
+    }
+    else if(value == "NoBrush")
+    {
+        brushStyle = Qt::BrushStyle::NoBrush;
+    }
+    else
+    {
+        brushStyle = Qt::BrushStyle::SolidPattern;
+    }
+
+    return brushStyle;
+}
+
+Qt::GlobalColor   ShapeParser::setTextColor(QString value)
+{
+    Qt::GlobalColor textColor;
+
+    // Checks & sets text color type
+    if(value == "white")
+    {
+        textColor = Qt::GlobalColor::white;
+    }
+    else if(value == "black")
+    {
+        textColor = Qt::GlobalColor::black;
+    }
+    else if(value == "red")
+    {
+        textColor = Qt::GlobalColor::red;
+    }
+    else if(value == "green")
+    {
+        textColor = Qt::GlobalColor::green;
+    }
+    else if(value == "blue")
+    {
+        textColor = Qt::GlobalColor::blue;
+    }
+    else if(value == "cyan")
+    {
+        textColor = Qt::GlobalColor::cyan;
+    }
+    else if(value == "magenta")
+    {
+        textColor = Qt::GlobalColor::magenta;
+    }
+    else if(value == "yellow")
+    {
+        textColor = Qt::GlobalColor::yellow;
+    }
+    else if(value == "gray")
+    {
+        textColor = Qt::GlobalColor::gray;
+    }
+    else
+    {
+        textColor = Qt::GlobalColor::black;
+    }
+
+    return textColor;
+}
+
+Qt::AlignmentFlag ShapeParser::setTextAlignment(QString value)
+{
+    Qt::AlignmentFlag textAllignment;
+
+    // Checks & sets text alignment type
+    if(value == "AlignLeft")
+    {
+        textAllignment = Qt::AlignmentFlag::AlignLeft;
+    }
+    else if(value == "AlignRight")
+    {
+        textAllignment = Qt::AlignmentFlag::AlignRight;
+    }
+    else if(value == "AlignTop")
+    {
+        textAllignment = Qt::AlignmentFlag::AlignTop;
+    }
+    else if(value == "AlignBottom")
+    {
+        textAllignment = Qt::AlignmentFlag::AlignBottom;
+    }
+    else if(value == "AlignCenter")
+    {
+        textAllignment = Qt::AlignmentFlag::AlignCenter;
+    }
+    else
+    {
+        textAllignment = Qt::AlignmentFlag::AlignLeft;
+    }
+
+    return textAllignment;
+}
+
+QFont::Style  ShapeParser::setTextFontStyle(QString value)
+{
+    QFont::Style textFontStyle;
+
+    // Checks & sets font style type
+    if(value == "StyleNormal")
+    {
+        textFontStyle = QFont::Style::StyleNormal;
+    }
+    else if(value == "StyleItalic")
+    {
+        textFontStyle = QFont::Style::StyleItalic;
+    }
+    else if(value == "StyleOblique")
+    {
+        textFontStyle = QFont::Style::StyleOblique;
+    }
+    else
+    {
+        textFontStyle = QFont::Style::StyleNormal;
+    }
+
+    return textFontStyle;
+}
+
+QFont::Weight ShapeParser::setTextFontWeight(QString value)
+{
+    QFont::Weight textFontWeight;
+
+    // Checks & sets font weight type
+    if(value == "Thin")
+    {
+        textFontWeight = QFont::Weight::Thin;
+    }
+    else if(value == "Light")
+    {
+        textFontWeight = QFont::Weight::Light;
+    }
+    else if(value == "Normal")
+    {
+        textFontWeight = QFont::Weight::Normal;
+    }
+    else if (value == "Bold")
+    {
+        textFontWeight = QFont::Weight::Bold;
+    }
+    else
+    {
+        textFontWeight = QFont::Weight::Normal;
+    }
+
+    return textFontWeight;
 }

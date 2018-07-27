@@ -75,19 +75,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_add_shape_button_clicked()
 {
-//    enum editShapePage{
-//        SHAPE,
-//        PEN,
-//        BRUSH,
-//        TEXT
-//    };
 
-//    Vector<Shape> shapesList;
-
-//    // create shape
-//    // add shape to vector of shapes in program
-
-//    ui->canvas->setShapes(shapesList);
 }
 
 
